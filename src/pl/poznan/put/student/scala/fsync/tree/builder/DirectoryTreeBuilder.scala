@@ -1,19 +1,43 @@
 package pl.poznan.put.student.scala.fsync.tree.builder
 
-import java.nio.file.Path
+import java.io.File
+import java.nio.file.{Paths, Files, Path}
 
 import pl.poznan.put.student.scala.fsync.tree.{TreeNode, DirectoryTree}
-import pl.poznan.put.student.scala.fsync.tree.nodes.DirectoryNode
+import pl.poznan.put.student.scala.fsync.tree.nodes.{FileNode, DirectoryNode}
+import pl.poznan.put.student.scala.fsync.utils.CurrentHashGenerator
+
 
 class DirectoryTreeBuilder extends TreeBuilder {
 
-  def generateNodes(startingPath : Path, rootNode : TreeNode) = {
+  def generateChildren(files: List[File], root: TreeNode) : Unit = {
+    if (files.length > 0) {
+      val path = Paths.get(files.head.getAbsolutePath)
+      generateNodes(path, root)
+      generateChildren(files.tail, root)
+    }
+  }
+
+
+  def generateNodes(startingPath: Path, rootNode: TreeNode) = {
+    val file = new File(startingPath.toString)
+    if (file.isDirectory) {
+      val directoryNode = new DirectoryNode(rootNode, startingPath.getFileName.toString, List())
+      rootNode.children = rootNode.children :+ directoryNode
+      generateChildren(file.listFiles.toList, directoryNode)
+
+    } else {
+      val content = Files.readAllBytes(startingPath)
+      val fileNode = new FileNode(rootNode, startingPath.getFileName.toString, CurrentHashGenerator.get.generate(content))
+      rootNode.children = rootNode.children :+ fileNode
+    }
 
   }
+
   override def generateTree(fullPath: Path): DirectoryTree = {
     val root = new DirectoryNode(null, fullPath.getFileName.toString, List())
     val tree = new DirectoryTree(fullPath, root)
     generateNodes(fullPath, root)
-    return tree
+    tree
   }
 }
