@@ -7,7 +7,7 @@ class FileNode(parentNode: TreeNode, fileName: String, fileChecksum: String) ext
 
   override def parent: TreeNode = parentNode
 
-  override def children: List[TreeNode] = List()
+  override var children: List[TreeNode] = List()
 
   override def hash: String = fileChecksum
 

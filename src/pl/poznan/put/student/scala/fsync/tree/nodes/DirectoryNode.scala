@@ -4,9 +4,7 @@ import pl.poznan.put.student.scala.fsync.tree.TreeNode
 import pl.poznan.put.student.scala.fsync.utils._
 
 class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: List[TreeNode]) extends TreeNode {
-  var _children: List[TreeNode] = childNodes
-
-  override def children = _children
+  override var children: List[TreeNode] = childNodes
 
   override def parent: TreeNode = parentNode
 
@@ -19,7 +17,7 @@ class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: Lis
       })
     }
     combinedHashes = combinedHashes + name
-    CurrentHashGenerator.get.getHashFromString(combinedHashes)
+    CurrentHashGenerator.get.generate(combinedHashes)
   }
 
   override def name: String = directoryName

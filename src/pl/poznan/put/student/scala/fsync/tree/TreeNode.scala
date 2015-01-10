@@ -3,7 +3,7 @@ package pl.poznan.put.student.scala.fsync.tree
 trait TreeNode {
   def parent: TreeNode
 
-  def children: List[TreeNode]
+  var children: List[TreeNode]
 
   def name: String
 

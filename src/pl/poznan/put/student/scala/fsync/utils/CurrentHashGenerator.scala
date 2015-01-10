@@ -1,7 +1,7 @@
 package pl.poznan.put.student.scala.fsync.utils
 
 object CurrentHashGenerator {
-  var currentHashGenerator : HashGenerator = new ShittyHashGenerator()
+  var currentHashGenerator : HashGenerator = new MD5HashGenerator()
 
   def get: HashGenerator = {
     currentHashGenerator
