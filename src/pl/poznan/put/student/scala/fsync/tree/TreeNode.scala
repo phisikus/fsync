@@ -10,15 +10,17 @@ trait TreeNode extends Serializable {
 
   def hash: String
 
+  def isDirectory: Boolean
+
   override def toString: String = {
-    "{ name: " + name + ", hash: " + hash + ", children: " + children.toString() + " }\n"
+    "\n{ name: " + name + ", hash: " + hash + ", isDirectory: " + isDirectory + ", children: " + children.toString() + " }\n"
   }
 
   override def equals(obj: scala.Any): Boolean = {
     var result = false
     val node = obj.asInstanceOf[TreeNode]
     if (node != null) {
-      result = name.equals(node.name) && hash.equals(node.hash) && children.equals(node.children)
+      result = name.equals(node.name) && hash.equals(node.hash)
       if (node.parent != null) {
         result && node.parent.equals(node.parent)
       } else {
