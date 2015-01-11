@@ -14,4 +14,12 @@ class DirectoryTree(fullPath: Path, rootNode: TreeNode) {
     "{\n path: " + path.toString + ",\n hash: " + hash + ",\n root: " + root.toString + "\n}"
   }
 
+  override def equals(obj: scala.Any): Boolean = {
+    val result = false
+    val tree = obj.asInstanceOf[DirectoryTree]
+    if (tree != null) {
+      this.path.equals(tree.path) && this.root.equals(tree.root)
+    }
+    result
+  }
 }
