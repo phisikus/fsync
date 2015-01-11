@@ -54,7 +54,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     //    - if left one is directory and right is a file -> remove directory, add right file
     //    - if both are directories -> call this function with their content lists
     list match {
-      case head :: tail => {
+      case head :: tail =>
         if (!head._1.isDirectory && !head._2.isDirectory)
           return List(new ReplaceContent(head._2.getFullPath, getContentForNode(head._2))) ::: handleCommonNodes(tail)
         if (!head._1.isDirectory && head._2.isDirectory)
@@ -65,7 +65,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
           diffNodeList(head._1.children, head._2.children) ::: handleCommonNodes(tail)
         else
           List()
-      }
+
       case Nil => List()
     }
 
@@ -82,7 +82,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
     list match {
       case head :: tail =>
-        deleteRecursively(List(head)) ::: removeNodesDifferences(tail)
+        deleteRecursively(head :: head.children) ::: removeNodesDifferences(tail)
       case Nil => List()
     }
   }
@@ -92,7 +92,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     list match {
       case head :: tail =>
         if (head.isDirectory)
-          List(new CreateDirectory(head.getFullPath)) ::: createNodesDifferences(tail)
+          List(new CreateDirectory(head.getFullPath)) ::: createNodesDifferences(head.children ::: tail)
         else
           List(new CreateFile(head.getFullPath, getContentForNode(head))) ::: createNodesDifferences(tail)
       case Nil => List()
