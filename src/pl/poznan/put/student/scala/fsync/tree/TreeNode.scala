@@ -29,4 +29,12 @@ trait TreeNode extends Serializable {
     }
     result
   }
+
+  def getFullPath : String = {
+    if(parent != null) {
+      parent.getFullPath + '/' + name
+    } else {
+      name
+    }
+  }
 }
