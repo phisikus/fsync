@@ -5,7 +5,7 @@ import java.nio.file.{Paths, Files, Path}
 
 import pl.poznan.put.student.scala.fsync.tree.{TreeNode, DirectoryTree}
 import pl.poznan.put.student.scala.fsync.tree.nodes.{FileNode, DirectoryNode}
-import pl.poznan.put.student.scala.fsync.utils.CurrentHashGenerator
+import pl.poznan.put.student.scala.fsync.utils.Container
 
 
 class DirectoryTreeBuilder extends TreeBuilder {
@@ -20,7 +20,7 @@ class DirectoryTreeBuilder extends TreeBuilder {
 
   def generateNodesForDirectory(startingPath: Path, rootNode: TreeNode): FileNode = {
     val content = Files.readAllBytes(startingPath)
-    val fileNode = new FileNode(rootNode, startingPath.getFileName.toString, CurrentHashGenerator.get.generate(content))
+    val fileNode = new FileNode(rootNode, startingPath.getFileName.toString, Container.getHashGenerator.generate(content))
     rootNode.children = rootNode.children :+ fileNode
     fileNode
   }

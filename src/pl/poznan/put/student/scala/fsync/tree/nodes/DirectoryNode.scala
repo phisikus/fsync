@@ -17,7 +17,7 @@ class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: Lis
       })
     }
     combinedHashes = combinedHashes + name
-    CurrentHashGenerator.get.generate(combinedHashes)
+    Container.getHashGenerator.generate(combinedHashes)
   }
 
   override def name: String = directoryName
