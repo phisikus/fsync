@@ -24,10 +24,14 @@ object Tester extends App {
   }
 
   val treeBuilder: TreeBuilder = Container.getTreeBuilder
-  val tree = treeBuilder.generateTree("/home/phisikus/eagle")
+  val differenceGenerator = Container.getDifferenceGenerator
 
-  println(tree.root.toString)
-  //saveTree(tree)
+  val tree = treeBuilder.generateTree("/home/phisikus/eagle")
   val tree2 = loadTree()
-  println(tree2.equals(tree))
+
+  val difference = differenceGenerator.generate(tree2, tree)
+  println(difference.toString)
+
+  saveTree(tree)
+
 }
