@@ -14,6 +14,6 @@ class FileNode(parentNode: TreeNode, fileName: String, fileChecksum: String) ext
   override def name: String = fileName
 
   override def toString: String = {
-    "{ name: " + name + ", hash: " + hash + " }"
+    "\n{ name: " + name + ", hash: " + hash + " }"
   }
 }
