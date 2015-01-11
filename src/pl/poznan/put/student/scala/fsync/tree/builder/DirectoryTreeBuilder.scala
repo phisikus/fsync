@@ -18,24 +18,33 @@ class DirectoryTreeBuilder extends TreeBuilder {
     }
   }
 
+  def generateNodesForDirectory(startingPath: Path, rootNode: TreeNode): FileNode = {
+    val content = Files.readAllBytes(startingPath)
+    val fileNode = new FileNode(rootNode, startingPath.getFileName.toString, CurrentHashGenerator.get.generate(content))
+    rootNode.children = rootNode.children :+ fileNode
+    fileNode
+  }
+
+  def generateNodesForRegularFile(startingPath: Path, rootNode: TreeNode, file: File): DirectoryNode = {
+    val directoryNode = new DirectoryNode(rootNode, startingPath.getFileName.toString, List())
+    if (rootNode != null) {
+      rootNode.children = rootNode.children :+ directoryNode
+    }
+    generateChildren(file.listFiles.toList, directoryNode)
+    directoryNode
+  }
+
 
   def generateNodes(startingPath: Path, rootNode: TreeNode): TreeNode = {
     val file = new File(startingPath.toString)
     if (file.isDirectory) {
-      val directoryNode = new DirectoryNode(rootNode, startingPath.getFileName.toString, List())
-      if (rootNode != null) {
-        rootNode.children = rootNode.children :+ directoryNode
-      }
-      generateChildren(file.listFiles.toList, directoryNode)
-      directoryNode
+      generateNodesForRegularFile(startingPath, rootNode, file)
     } else {
-      val content = Files.readAllBytes(startingPath)
-      val fileNode = new FileNode(rootNode, startingPath.getFileName.toString, CurrentHashGenerator.get.generate(content))
-      rootNode.children = rootNode.children :+ fileNode
-      fileNode
+      generateNodesForDirectory(startingPath, rootNode)
     }
 
   }
+
 
   override def generateTree(fullPath: Path): DirectoryTree = {
     val rootNode = generateNodes(fullPath, null)
