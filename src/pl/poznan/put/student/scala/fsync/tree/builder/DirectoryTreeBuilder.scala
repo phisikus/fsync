@@ -29,7 +29,6 @@ class DirectoryTreeBuilder extends TreeBuilder {
     if (rootNode != null) {
       rootNode.children = rootNode.children :+ directoryNode
     }
-
     val sortedChildren = file.listFiles.toList.sorted
     generateChildren(sortedChildren, directoryNode)
     directoryNode
