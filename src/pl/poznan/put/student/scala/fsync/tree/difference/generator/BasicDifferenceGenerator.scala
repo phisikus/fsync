@@ -101,8 +101,8 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
 
   def diffNodeList(a: List[TreeNode], b: List[TreeNode]): List[NodeDifference] = {
-    val leftDiff = a.diff(b)
-    val rightDiff = b.diff(a)
+    val leftDiff = a.toSet.diff(b.toSet).toList
+    val rightDiff = b.toSet.diff(a.toSet).toList
     val intersectingNodesTuples = pairIntersectingNodes(leftDiff, rightDiff)
     val intersectingNodesFlat = intersectingNodesTuples.flatMap(x => List(x._1, x._2))
     val exclusiveLeftNodes = leftDiff.diff(intersectingNodesFlat)
