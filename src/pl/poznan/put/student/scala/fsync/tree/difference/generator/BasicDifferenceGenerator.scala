@@ -82,7 +82,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
     list match {
       case head :: tail =>
-        deleteRecursively(head :: head.children) ::: removeNodesDifferences(tail)
+        removeNodesDifferences(head.children ::: tail) ::: deleteRecursively(List(head))
       case Nil => List()
     }
   }
