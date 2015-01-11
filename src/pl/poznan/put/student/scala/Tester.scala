@@ -25,7 +25,9 @@ object Tester extends App {
 
   val treeBuilder: TreeBuilder = Container.getTreeBuilder
   val tree = treeBuilder.generateTree("/home/phisikus/eagle")
-  //val tree = loadTree()
-  println(tree.root.toString)
+
+  //println(tree.root.toString)
   saveTree(tree)
+  val tree2 = loadTree()
+  println(tree2.equals(tree))
 }

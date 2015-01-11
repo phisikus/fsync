@@ -1,7 +1,5 @@
 package pl.poznan.put.student.scala.fsync.tree
 
-import java.nio.file.Path
-
 @SerialVersionUID(1L)
 class DirectoryTree(fullPath: String, rootNode: TreeNode) extends Serializable {
   val path: String = fullPath
