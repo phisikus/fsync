@@ -12,8 +12,7 @@ class DirectoryTreeBuilder extends TreeBuilder {
 
   def generateChildren(files: List[File], root: TreeNode): Unit = {
     if (files.length > 0) {
-      val path = Paths.get(files.head.getAbsolutePath)
-      generateNodes(path, root)
+      generateNodes(files.head.getAbsolutePath, root)
       generateChildren(files.tail, root)
     }
   }
@@ -35,18 +34,19 @@ class DirectoryTreeBuilder extends TreeBuilder {
   }
 
 
-  def generateNodes(startingPath: Path, rootNode: TreeNode): TreeNode = {
-    val file = new File(startingPath.toString)
+  def generateNodes(startingPath: String, rootNode: TreeNode): TreeNode = {
+    val path = Paths.get(startingPath)
+    val file = new File(startingPath)
     if (file.isDirectory) {
-      generateNodesForRegularFile(startingPath, rootNode, file)
+      generateNodesForRegularFile(path, rootNode, file)
     } else {
-      generateNodesForDirectory(startingPath, rootNode)
+      generateNodesForDirectory(path, rootNode)
     }
 
   }
 
 
-  override def generateTree(fullPath: Path): DirectoryTree = {
+  override def generateTree(fullPath: String): DirectoryTree = {
     val rootNode = generateNodes(fullPath, null)
     val tree = new DirectoryTree(fullPath, rootNode)
     tree
