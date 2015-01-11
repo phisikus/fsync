@@ -31,4 +31,5 @@ class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: Lis
 
   override def name: String = directoryName
 
+  override def isDirectory: Boolean = true
 }
