@@ -10,6 +10,6 @@ trait TreeNode {
   def hash: String
 
   override def toString: String = {
-    "{ name: " + name + ", hash: " + hash + ", children: " + children.toString() + " }"
+    "{ name: " + name + ", hash: " + hash + ", children: " + children.toString() + " }\n"
   }
 }

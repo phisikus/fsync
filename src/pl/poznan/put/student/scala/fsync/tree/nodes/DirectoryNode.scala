@@ -12,7 +12,7 @@ class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: Lis
     val listOfHashes = children.map((node) => node.hash)
     var combinedHashes = ""
     if (listOfHashes.nonEmpty) {
-      listOfHashes.reduce((result, element) => {
+      combinedHashes = listOfHashes.reduce((result, element) => {
         result + element
       })
     }
