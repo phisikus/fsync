@@ -1,9 +1,8 @@
 package pl.poznan.put.student.scala.fsync.tree.difference
 
-import scala.reflect.io.Path
 
-
-trait NodeDifference {
+@SerialVersionUID(1L)
+trait NodeDifference extends Serializable{
 
   def getFilePath()
 

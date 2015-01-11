@@ -1,7 +1,8 @@
 package pl.poznan.put.student.scala.fsync.tree.difference
 
 
-class TreeDifference {
+@SerialVersionUID(1L)
+class TreeDifference extends Serializable {
   var nodeDifferences = List[NodeDifference]()
 
   def apply() = {

@@ -1,6 +1,7 @@
 package pl.poznan.put.student.scala.fsync.tree
 
-trait TreeNode {
+@SerialVersionUID(1L)
+trait TreeNode extends Serializable {
   def parent: TreeNode
 
   var children: List[TreeNode]
@@ -18,7 +19,7 @@ trait TreeNode {
     val node = obj.asInstanceOf[TreeNode]
     if (node != null) {
       result = name.equals(node.name) && hash.equals(node.hash) && children.eq(node.children)
-      if(node.parent != null){
+      if (node.parent != null) {
         result && node.parent.equals(node.parent)
       } else {
         result

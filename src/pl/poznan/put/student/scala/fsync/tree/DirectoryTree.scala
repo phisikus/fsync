@@ -2,8 +2,9 @@ package pl.poznan.put.student.scala.fsync.tree
 
 import java.nio.file.Path
 
-class DirectoryTree(fullPath: Path, rootNode: TreeNode) {
-  val path: Path = fullPath
+@SerialVersionUID(1L)
+class DirectoryTree(fullPath: String, rootNode: TreeNode) extends Serializable {
+  val path: String = fullPath
   val root: TreeNode = rootNode
 
   def hash: String = {
@@ -11,7 +12,7 @@ class DirectoryTree(fullPath: Path, rootNode: TreeNode) {
   }
 
   override def toString: String = {
-    "{\n path: " + path.toString + ",\n hash: " + hash + ",\n root: " + root.toString + "\n}"
+    "{\n path: " + path + ",\n hash: " + hash + ",\n root: " + root.toString + "\n}"
   }
 
   override def equals(obj: scala.Any): Boolean = {
