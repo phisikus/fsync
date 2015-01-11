@@ -14,10 +14,15 @@ trait TreeNode {
   }
 
   override def equals(obj: scala.Any): Boolean = {
-    val result = false
+    var result = false
     val node = obj.asInstanceOf[TreeNode]
     if (node != null) {
-      name.equals(node.name) && hash.equals(node.hash) && children.eq(node.children)
+      result = name.equals(node.name) && hash.equals(node.hash) && children.eq(node.children)
+      if(node.parent != null){
+        result && node.parent.equals(node.parent)
+      } else {
+        result
+      }
     }
     result
   }
