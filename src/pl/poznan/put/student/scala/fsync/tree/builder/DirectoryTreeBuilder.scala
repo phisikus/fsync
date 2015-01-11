@@ -1,10 +1,10 @@
 package pl.poznan.put.student.scala.fsync.tree.builder
 
 import java.io.File
-import java.nio.file.{Paths, Files, Path}
+import java.nio.file.{Files, Path, Paths}
 
-import pl.poznan.put.student.scala.fsync.tree.{TreeNode, DirectoryTree}
-import pl.poznan.put.student.scala.fsync.tree.nodes.{FileNode, DirectoryNode}
+import pl.poznan.put.student.scala.fsync.tree.nodes.{DirectoryNode, FileNode}
+import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
 import pl.poznan.put.student.scala.fsync.utils.Container
 
 
@@ -29,7 +29,9 @@ class DirectoryTreeBuilder extends TreeBuilder {
     if (rootNode != null) {
       rootNode.children = rootNode.children :+ directoryNode
     }
-    generateChildren(file.listFiles.toList, directoryNode)
+
+    val sortedChildren = file.listFiles.toList.sorted
+    generateChildren(sortedChildren, directoryNode)
     directoryNode
   }
 
