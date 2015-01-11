@@ -5,6 +5,7 @@ import pl.poznan.put.student.scala.fsync.tree.difference.{TreeDifference, Differ
 
 class BasicDifferenceGenerator extends DifferenceGenerator {
   override def generate(sourceTree: DirectoryTree, resultTree: DirectoryTree): TreeDifference = {
-    null
+    val treeDifference = new TreeDifference()
+    treeDifference
   }
 }

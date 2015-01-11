@@ -13,4 +13,8 @@ class TreeDifference extends Serializable {
       }
     }
   }
+
+  override def toString: String = {
+    "\n{ nodeDifferences: " + nodeDifferences.toString + " }"
+  }
 }
