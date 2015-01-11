@@ -27,11 +27,30 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     }
   }
 
+  def pairIntersectingNodes(a: List[TreeNode], b: List[TreeNode]): List[Tuple2[TreeNode, TreeNode]] = {
+    val allPairs = a.flatMap(x => b.map(y => (x, y)))
+
+    def matchingPairs(pairs: List[Tuple2[TreeNode, TreeNode]]): List[Tuple2[TreeNode, TreeNode]] = {
+      pairs match {
+        case head :: tail =>
+          if (head._1.name.equals(head._2.name))
+            List((head._1, head._2)) ::: matchingPairs(tail)
+          else
+            matchingPairs(tail)
+        case Nil => List()
+      }
+    }
+    matchingPairs(allPairs)
+  }
+
 
   def diffNodeList(a: List[TreeNode], b: List[TreeNode]): List[NodeDifference] = {
     val leftDiff = a.diff(b)
     val rightDiff = b.diff(a)
-
+    val intersectingNodesTuples = pairIntersectingNodes(leftDiff, rightDiff)
+    val intersectingNodesFlat = intersectingNodesTuples.flatMap(x => List(x._1, x._2))
+    val exclusiveLeft = leftDiff.diff(intersectingNodesFlat)
+    val exclusiveRight = rightDiff.diff(intersectingNodesFlat)
     // types of elements
     // - exist on left side and on right side with different hashes, same names
     //    - if both are files -> update the one on the right
