@@ -73,16 +73,9 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
   def removeNodesDifferences(list: List[TreeNode]): List[NodeDifference] = {
     // nodes exclusive on the left side should be removed, because they don't exist in new version
-    def deleteRecursively(nodes: List[TreeNode]): List[NodeDifference] = {
-      nodes match {
-        case head :: tail => deleteRecursively(tail) :+ new DeleteFileOrDirectory(head.getFullPath)
-        case Nil => List()
-      }
-    }
-
     list match {
       case head :: tail =>
-        removeNodesDifferences(head.children ::: tail) ::: deleteRecursively(List(head))
+        removeNodesDifferences(head.children ::: tail) :+ new DeleteFileOrDirectory(head.getFullPath)
       case Nil => List()
     }
   }
