@@ -8,4 +8,5 @@ object Tester extends App {
   val treeBuilder = new DirectoryTreeBuilder()
   val tree = treeBuilder.generateTree(Paths.get("/home/phisikus/eagle"))
   println(tree.root.toString)
+  println(tree.equals(tree))
 }
