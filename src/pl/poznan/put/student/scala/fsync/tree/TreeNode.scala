@@ -18,7 +18,7 @@ trait TreeNode extends Serializable {
     var result = false
     val node = obj.asInstanceOf[TreeNode]
     if (node != null) {
-      result = name.equals(node.name) && hash.equals(node.hash) && children.eq(node.children)
+      result = name.equals(node.name) && hash.equals(node.hash) && children.equals(node.children)
       if (node.parent != null) {
         result && node.parent.equals(node.parent)
       } else {
