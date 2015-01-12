@@ -1,9 +1,11 @@
 package pl.poznan.put.student.scala.fsync.tree.difference.generator
 
+import java.nio.file.{Files, Paths}
+
 import com.sun.javaws.exceptions.InvalidArgumentException
-import pl.poznan.put.student.scala.fsync.tree.difference.types.{ReplaceContent, CreateFile, CreateDirectory, DeleteFileOrDirectory}
-import pl.poznan.put.student.scala.fsync.tree.{TreeNode, DirectoryTree}
-import pl.poznan.put.student.scala.fsync.tree.difference.{NodeDifference, DifferenceGenerator, TreeDifference}
+import pl.poznan.put.student.scala.fsync.tree.difference.types.{CreateDirectory, CreateFile, DeleteFileOrDirectory, ReplaceContent}
+import pl.poznan.put.student.scala.fsync.tree.difference.{DifferenceGenerator, NodeDifference, TreeDifference}
+import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
 
 class BasicDifferenceGenerator extends DifferenceGenerator {
 
@@ -44,7 +46,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
   }
 
   def getContentForNode(node: TreeNode): Array[Byte] = {
-    Array() // todo handle retrieving of content
+    Files.readAllBytes(Paths.get(node.getFullPath))
   }
 
 
