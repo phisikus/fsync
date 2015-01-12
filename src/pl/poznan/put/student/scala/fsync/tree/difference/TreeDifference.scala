@@ -12,6 +12,7 @@ class TreeDifference extends Serializable {
         applyNodeDifferences(list.tail)
       }
     }
+    applyNodeDifferences(nodeDifferences)
   }
 
   override def toString: String = {
