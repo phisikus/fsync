@@ -24,8 +24,16 @@ class DirectoryTreeBuilder extends TreeBuilder {
     fileNode
   }
 
+  def generateEmptyDirectoryNode(startingPath: Path, rootNode: TreeNode): DirectoryNode = {
+    if (rootNode != null)
+      new DirectoryNode(rootNode, startingPath.getFileName.toString, List())
+    else
+      new DirectoryNode(null, startingPath.toString, List())
+  }
+
   def generateNodesForRegularFile(startingPath: Path, rootNode: TreeNode, file: File): DirectoryNode = {
-    val directoryNode = new DirectoryNode(rootNode, startingPath.getFileName.toString, List())
+    val directoryNode = generateEmptyDirectoryNode(startingPath, rootNode)
+
     if (rootNode != null) {
       rootNode.children = rootNode.children :+ directoryNode
     }

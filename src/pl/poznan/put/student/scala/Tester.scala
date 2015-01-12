@@ -15,6 +15,14 @@ object Tester extends App {
     output.close()
   }
 
+  def save(obj: Any): Unit = {
+    val file = new FileOutputStream("obj.fsync")
+    val output = new ObjectOutputStream(file)
+    output.writeObject(obj)
+    output.close()
+  }
+
+
   def loadTree(): DirectoryTree = {
     val file = new FileInputStream("tree.fsync")
     val input = new ObjectInputStream(file)
@@ -34,7 +42,7 @@ object Tester extends App {
   println(tree2.toString)
   println(tree.equals(tree2))
   println(difference.toString)
-
+  save(difference)
 
   saveTree(tree)
 
