@@ -89,9 +89,9 @@ object Tester extends App {
     val difference: TreeDifference = load().asInstanceOf[TreeDifference]
     difference.apply()
   }
-
+testDetectChange()
   //testCreateTheSameInEmptyDir()
-  testApplyChanges()
+  //testApplyChanges()
 
 
 }
