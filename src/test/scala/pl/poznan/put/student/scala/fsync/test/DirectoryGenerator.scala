@@ -9,7 +9,7 @@ import pl.poznan.put.student.scala.fsync.utils.Container
 
 import scala.util.Random
 
-class DirectoryGenerator(currentPath: String, exampleFileSize : Int, exampleDirectoryDepth: Int) {
+class DirectoryGenerator(currentPath: String, exampleFileSize: Int, exampleDirectoryDepth: Int) {
 
   val randomGenerator = new Random()
   val fileSize = exampleFileSize
@@ -84,5 +84,21 @@ class DirectoryGenerator(currentPath: String, exampleFileSize : Int, exampleDire
       }
     }
     delete(new File(currentPath + "/" + directoryName))
+  }
+
+
+  def changeFiles(root: DirectoryNode): Unit = {
+    for (child <- root.children) {
+      if (!child.isDirectory) {
+        val outputStream = new FileOutputStream(child.getFullPath)
+        val content = generateRandomContent(fileSize)
+        outputStream.write(content)
+        outputStream.close()
+      } else {
+        changeFiles(child.asInstanceOf[DirectoryNode])
+      }
+
+    }
+
   }
 }
