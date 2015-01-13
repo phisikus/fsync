@@ -7,5 +7,4 @@ import pl.poznan.put.student.scala.fsync.communication.message.ParticipantHandle
 trait Communicator {
   val participant: Participant
   val localHandle: ParticipantHandle
-
 }
