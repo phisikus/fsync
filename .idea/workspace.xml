@@ -3,66 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f3772e1c-579c-4834-8f70-71629c4c2d5d" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/obj.fsync" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/obj.fsync" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tree.fsync" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tree.fsync" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/Container.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/types/CreateDirectory.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/types/CreateFile.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/types/DeleteFileOrDirectory.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/DifferenceGenerator.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/nodes/DirectoryNode.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/DirectoryTree.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/nodes/FileNode.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/HashGenerator.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/MD5HashGenerator.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/NodeDifference.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/types/ReplaceContent.scala" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/Tester.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/TreeBuilder.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/TreeNode.scala" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.sbt" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/build.sbt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/root-build.iml" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/modules/root-build.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/root.iml" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/modules/root.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sbt.xml" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/sbt.xml" />
-      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/fsync.iml" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/fsync.iml" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/Tester.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/DirectoryTree.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/TreeNode.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/builder/TreeBuilder.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/DifferenceGenerator.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/NodeDifference.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/types/CreateDirectory.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/types/CreateFile.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/types/DeleteFileOrDirectory.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/difference/types/ReplaceContent.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/nodes/DirectoryNode.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/tree/nodes/FileNode.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/utils/Container.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/utils/HashGenerator.scala" afterPath="" />
-      <change type="DELETED" beforePath="/media/HOME/home/phisikus/Git/fsync/src/pl/poznan/put/student/scala/fsync/utils/MD5HashGenerator.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/misc.xml" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/modules.xml" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/vcs.xml" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/vcs.xml" />
     </list>
     <ignored path="fsync.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -251,6 +202,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="LayoutCode.rearrangeEntriesScala" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Application.Tester">
     <configuration default="false" name="Tester" type="Application" factoryName="Application" temporary="true">
@@ -596,18 +548,28 @@
     </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f3772e1c-579c-4834-8f70-71629c4c2d5d" name="Default" comment="" />
       <created>1421137028064</created>
       <option name="number" value="Default" />
       <updated>1421137028064</updated>
-      <workItem from="1421137030609" duration="148000" />
+      <workItem from="1421137030609" duration="212000" />
     </task>
+    <task id="LOCAL-00001" summary="Created SBT project">
+      <created>1421137210110</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1421137210110</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148000" />
+    <option name="totallyTimeSpent" value="212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -636,7 +598,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -659,6 +621,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Created SBT project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created SBT project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
