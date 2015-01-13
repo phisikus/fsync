@@ -41,6 +41,7 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
     if (messageToClient != null) {
       val outputToClient = new ObjectOutputStream(connectionSocket.getOutputStream)
       outputToClient.writeObject(messageToClient)
+      outputToClient.close()
     }
     connectionSocket.close()
   }
@@ -48,6 +49,7 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
   def getMessageFromClient(connectionSocket: Socket): Message = {
     val inputFromClient = new ObjectInputStream(connectionSocket.getInputStream)
     val messageFromClient = inputFromClient.readObject().asInstanceOf[Message]
+    inputFromClient.close()
     messageFromClient
   }
 }
