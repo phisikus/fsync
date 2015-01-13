@@ -1,1 +1,9 @@
 [0m[[0minfo[0m] [0m[32mTreeRestoreTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mDirectory Tree[0m[0m
+[0m[[0minfo[0m] [0m[32m- should be created properly[0m[0m
+[0m[[0minfo[0m] [0m[32mDirectory Tree[0m[0m
+[0m[[0minfo[0m] [0m[32m- should be restored properly[0m[0m
+[0m[[0minfo[0m] [0m[32mDirectory Tree[0m[0m
+[0m[[0minfo[0m] [0m[32m- should be changed properly[0m[0m
+[0m[[0minfo[0m] [0m[32mDirectory Tree[0m[0m
+[0m[[0minfo[0m] [0m[32m- should be removed properly[0m[0m
