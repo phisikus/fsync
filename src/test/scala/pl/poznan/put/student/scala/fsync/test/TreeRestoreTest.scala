@@ -27,6 +27,8 @@ class TreeRestoreTest extends FlatSpec with BeforeAndAfter {
 
   "Directory Tree" should "be created properly" in {
     val directoryTree = directoryTreeBuilder.generateTree(exampleDirectoryPath)
+    println(directoryTree.toString)
+    println(generatedDirectoryTree.toString)
     assert(directoryTree.equals(generatedDirectoryTree))
   }
 
