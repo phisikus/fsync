@@ -8,7 +8,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/output" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/output" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala" afterPath="$PROJECT_DIR$/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala" />
       <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/reports/default-fsync_2.11-compile-internal.xml" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/default-fsync_2.11-compile-internal.xml" />
@@ -39,7 +38,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/resolution-cache/default/fsync_2.11/0.1/resolved.xml.xml" afterPath="$PROJECT_DIR$/target/resolution-cache/default/fsync_2.11/0.1/resolved.xml.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/test/test/$global/streams/succeeded_tests" afterPath="$PROJECT_DIR$/target/streams/test/test/$global/streams/succeeded_tests" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" />
     </list>
     <ignored path="fsync.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +68,8 @@
       <file leaf-file-name="DirectoryGenerator.scala" pinned="false" current-in-tab="false">
         <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1410">
-              <caret line="11" column="95" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="817" max-vertical-offset="1560">
+              <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -80,8 +78,8 @@
       <file leaf-file-name="TreeRestoreTest.scala" pinned="false" current-in-tab="true">
         <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22203948" vertical-offset="0" max-vertical-offset="825">
-              <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="516" max-vertical-offset="1170">
+              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -96,6 +94,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/nodes/DirectoryNode.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala" />
       </list>
@@ -545,7 +544,7 @@
       <workItem from="1421149963350" duration="1908000" />
       <workItem from="1421152348506" duration="161000" />
       <workItem from="1421152619197" duration="17000" />
-      <workItem from="1421152772596" duration="184000" />
+      <workItem from="1421152772596" duration="3704000" />
     </task>
     <task id="LOCAL-00001" summary="changed .idea">
       <created>1421140492335</created>
@@ -577,11 +576,23 @@
       <option name="project" value="LOCAL" />
       <updated>1421151635282</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="restore text fix.">
+      <created>1421152985319</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1421152985319</updated>
+    </task>
+    <task id="LOCAL-00007" summary="tests done.">
+      <created>1421156306177</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1421156306177</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11360000" />
+    <option name="totallyTimeSpent" value="14880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -609,7 +620,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37275606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -638,7 +649,9 @@
     <MESSAGE value="DirectoryNode hash depends on file names, not only hashes, implemented simple tree compare test." />
     <MESSAGE value="working restore test." />
     <MESSAGE value="TreeRestoreTest complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="TreeRestoreTest complete" />
+    <MESSAGE value="restore text fix." />
+    <MESSAGE value="tests done." />
+    <option name="LAST_COMMIT_MESSAGE" value="tests done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -766,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37391305" vertical-offset="841" max-vertical-offset="1830">
-          <caret line="84" column="16" selection-start-line="84" selection-start-column="6" selection-end-line="84" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/nodes/FileNode.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08152174" vertical-offset="0" max-vertical-offset="920">
@@ -798,23 +803,32 @@
     </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8043478" vertical-offset="40" max-vertical-offset="960">
+        <state vertical-scroll-proportion="1.2828947" vertical-offset="0" max-vertical-offset="960">
           <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59210527" vertical-offset="1050" max-vertical-offset="1875">
+          <caret line="96" column="0" selection-start-line="93" selection-start-column="5" selection-end-line="95" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/DirectoryGenerator.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1320">
-          <caret line="11" column="95" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="817" max-vertical-offset="1560">
+          <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22203948" vertical-offset="0" max-vertical-offset="825">
-          <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="516" max-vertical-offset="1170">
+          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
           <folding />
         </state>
       </provider>
