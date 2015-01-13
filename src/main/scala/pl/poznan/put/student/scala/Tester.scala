@@ -60,7 +60,7 @@ object Tester extends App {
   }
 
   def testCreateTheSameInEmptyDir() = {
-    val input = new Scanner( System.in )
+    val input = new Scanner(System.in)
 
     val treeBuilder: TreeBuilder = Container.getTreeBuilder
     val differenceGenerator = Container.getDifferenceGenerator
@@ -82,16 +82,16 @@ object Tester extends App {
     input.next()
 
     save(difference)
-   //difference.apply()
+    //difference.apply()
   }
 
   def testApplyChanges() = {
-    val difference : TreeDifference = load().asInstanceOf[TreeDifference]
+    val difference: TreeDifference = load().asInstanceOf[TreeDifference]
     difference.apply()
   }
 
   //testCreateTheSameInEmptyDir()
-testApplyChanges()
+  testApplyChanges()
 
 
 }

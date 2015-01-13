@@ -2,7 +2,7 @@ package pl.poznan.put.student.scala.fsync.tree.difference.generator
 
 import java.nio.file.{Files, Paths}
 
-import com.sun.javaws.exceptions.InvalidArgumentException
+import java.lang.IllegalArgumentException
 import pl.poznan.put.student.scala.fsync.tree.difference.types.{CreateDirectory, CreateFile, DeleteFileOrDirectory, ReplaceContent}
 import pl.poznan.put.student.scala.fsync.tree.difference.{DifferenceGenerator, NodeDifference, TreeDifference}
 import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
@@ -114,7 +114,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
   override def generate(sourceTree: DirectoryTree, resultTree: DirectoryTree): TreeDifference = {
     if (sourceTree.path != resultTree.path) {
-      throw new InvalidArgumentException(Array("Trees relate to different directories"))
+      throw new IllegalArgumentException("Trees relate to different directories")
     }
     generateTreeDifference(sourceTree.root, resultTree.root)
   }
