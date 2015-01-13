@@ -5,6 +5,7 @@ import java.util.Scanner
 
 import pl.poznan.put.student.scala.fsync.tree.DirectoryTree
 import pl.poznan.put.student.scala.fsync.tree.builder.TreeBuilder
+import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 import pl.poznan.put.student.scala.fsync.utils.Container
 
 object Tester extends App {
@@ -28,6 +29,14 @@ object Tester extends App {
     val file = new FileInputStream("tree.fsync")
     val input = new ObjectInputStream(file)
     val tree = input.readObject().asInstanceOf[DirectoryTree]
+    input.close()
+    tree
+  }
+
+  def load(): Any = {
+    val file = new FileInputStream("obj.fsync")
+    val input = new ObjectInputStream(file)
+    val tree = input.readObject()
     input.close()
     tree
   }
@@ -57,10 +66,10 @@ object Tester extends App {
     val differenceGenerator = Container.getDifferenceGenerator
 
     val tree = treeBuilder.generateTree("/home/phisikus/eagle")
-    System.out.print("Change something, Press key...\n");
+    System.out.print("Change something, Press key...\n")
     input.next()
     val tree2 = treeBuilder.generateTree("/home/phisikus/eagle")
-    System.out.print("Revert something, Press key...\n");
+    System.out.print("Revert something, Press key...\n")
     input.next()
 
 
@@ -69,12 +78,20 @@ object Tester extends App {
     println(tree2.toString)
     println(tree.equals(tree2))
     println(difference.toString)
-    System.out.print("Now apply, Press key...\n");
+    System.out.print("Now apply, Press key...\n")
     input.next()
 
+    save(difference)
+   //difference.apply()
+  }
+
+  def testApplyChanges() = {
+    val difference : TreeDifference = load().asInstanceOf[TreeDifference]
     difference.apply()
   }
 
-  testCreateTheSameInEmptyDir()
+  //testCreateTheSameInEmptyDir()
+testApplyChanges()
+
 
 }
