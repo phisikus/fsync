@@ -51,6 +51,7 @@ class TreeRestoreTest extends FlatSpec with BeforeAndAfter {
     val treeAfter = directoryTreeBuilder.generateTree(exampleDirectoryPath)
     val differenceAfter = differenceGenerator.generate(directoryTree, treeAfter)
     assert(differenceAfter.nodeDifferences.isEmpty)
+    assert(directoryTree.equals(treeAfter))
   }
 
   "Directory Tree" should "be removed properly" in {
