@@ -35,12 +35,20 @@ class DirectoryGenerator(currentPath: String) {
 
   def generateExampleDirectory(directoryName: String): DirectoryTree = {
     val fullDirectoryName = currentPath + "/" + directoryName
-    val parentDirectory = new File(fullDirectoryName)
     val rootNode = new DirectoryNode(null, fullDirectoryName, List())
     val directoryTree = new DirectoryTree(fullDirectoryName, rootNode)
-    parentDirectory.mkdirs()
-    generateRandomFiles(rootNode,fullDirectoryName, 10)
+    createEmptyDirectory(fullDirectoryName)
+    generateRandomFiles(rootNode, fullDirectoryName, 10)
     directoryTree
+  }
+
+  def renameFile(fileName: String, newFileName: String): Unit = {
+    new File(fileName).renameTo(new File(newFileName))
+  }
+
+  def createEmptyDirectory(fullDirectoryName: String) {
+    val parentDirectory = new File(fullDirectoryName)
+    parentDirectory.mkdirs()
   }
 
   def removeExampleDirectory(directoryName: String): Unit = {
