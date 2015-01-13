@@ -3,6 +3,7 @@ package pl.poznan.put.student.scala.fsync.test
 import java.io.File
 
 import org.scalatest._
+import pl.poznan.put.student.scala.fsync.tree.DirectoryTree
 import pl.poznan.put.student.scala.fsync.tree.builder.DirectoryTreeBuilder
 
 class TreeRestoreTest extends FlatSpec with BeforeAndAfter {
@@ -10,17 +11,23 @@ class TreeRestoreTest extends FlatSpec with BeforeAndAfter {
   val exampleDirectoryName = "testDirectory"
   val directoryTreeBuilder = new DirectoryTreeBuilder()
   val directoryGenerator = new DirectoryGenerator(basePath)
+  var generatedDirectoryTree: DirectoryTree = null
 
   before {
-    directoryGenerator.generateExampleDirectory(exampleDirectoryName)
+    generatedDirectoryTree = directoryGenerator.generateExampleDirectory(exampleDirectoryName)
   }
 
   after {
-    directoryGenerator.removeExampleDirectory(exampleDirectoryName)
+    //directoryGenerator.removeExampleDirectory(exampleDirectoryName)
   }
 
   "Directory Tree" should "be created properly" in {
-    val directoryTree = directoryTreeBuilder.generateTree(basePath + "/" + exampleDirectoryName)
+    val directoryPath = basePath + "/" + exampleDirectoryName
+    val directoryTree = directoryTreeBuilder.generateTree(directoryPath)
+    println(generatedDirectoryTree.toString)
+    println(directoryTree.toString)
+    assert(directoryTree.equals(generatedDirectoryTree))
+
   }
 
 

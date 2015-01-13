@@ -3,6 +3,10 @@ package pl.poznan.put.student.scala.fsync.test
 
 import java.io.{FileOutputStream, File}
 
+import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
+import pl.poznan.put.student.scala.fsync.tree.nodes.{DirectoryNode, FileNode}
+import pl.poznan.put.student.scala.fsync.utils.Container
+
 import scala.util.Random
 
 class DirectoryGenerator(currentPath: String) {
@@ -16,20 +20,27 @@ class DirectoryGenerator(currentPath: String) {
     result
   }
 
-  def generateRandomFiles(currentPath: String, numberOfFiles: Int): Unit = {
+  def generateRandomFiles(root: DirectoryNode, currentPath: String, numberOfFiles: Int): Unit = {
+    var fileList = List[TreeNode]()
     for (i <- 1 until numberOfFiles) {
-      val outputStream = new FileOutputStream(currentPath + "/testFile_" + i.toString, false)
-      outputStream.write(generateRandomContent(fileSize))
+      val outputStream = new FileOutputStream(root.getFullPath + "/testFile_" + i.toString, false)
+      val content = generateRandomContent(fileSize)
+      outputStream.write(content)
       outputStream.close()
-    }
 
+      fileList = fileList :+ new FileNode(root, "testFile_" + i.toString, Container.getHashGenerator.generate(content))
+    }
+    root.children = fileList
   }
 
-  def generateExampleDirectory(directoryName: String): Unit = {
+  def generateExampleDirectory(directoryName: String): DirectoryTree = {
     val fullDirectoryName = currentPath + "/" + directoryName
     val parentDirectory = new File(fullDirectoryName)
+    val rootNode = new DirectoryNode(null, fullDirectoryName, List())
+    val directoryTree = new DirectoryTree(fullDirectoryName, rootNode)
     parentDirectory.mkdirs()
-    generateRandomFiles(fullDirectoryName, 10)
+    generateRandomFiles(rootNode,fullDirectoryName, 10)
+    directoryTree
   }
 
   def removeExampleDirectory(directoryName: String): Unit = {
