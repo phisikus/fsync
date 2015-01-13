@@ -9,10 +9,12 @@ import pl.poznan.put.student.scala.fsync.utils.Container
 
 import scala.util.Random
 
-class DirectoryGenerator(currentPath: String) {
+class DirectoryGenerator(currentPath: String, exampleFileSize : Int, exampleDirectoryDepth: Int) {
 
   val randomGenerator = new Random()
-  val fileSize = 100000
+  val fileSize = exampleFileSize
+  val depth = exampleDirectoryDepth
+
 
   def generateRandomContent(size: Int): Array[Byte] = {
     val result = new Array[Byte](size)
@@ -58,7 +60,7 @@ class DirectoryGenerator(currentPath: String) {
     val rootNode = new DirectoryNode(null, fullDirectoryName, List())
     val directoryTree = new DirectoryTree(fullDirectoryName, rootNode)
     createEmptyDirectory(fullDirectoryName)
-    generateRandomTree(rootNode, 3)
+    generateRandomTree(rootNode, depth)
     directoryTree
   }
 
