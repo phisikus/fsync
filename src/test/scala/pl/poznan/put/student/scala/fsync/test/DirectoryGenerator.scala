@@ -22,7 +22,7 @@ class DirectoryGenerator(currentPath: String) {
 
   def generateRandomFiles(root: DirectoryNode, currentPath: String, numberOfFiles: Int): Unit = {
     var fileList = List[TreeNode]()
-    for (i <- 1 until numberOfFiles) {
+    for (i <- 1 to numberOfFiles) {
       val outputStream = new FileOutputStream(root.getFullPath + "/testFile_" + i.toString, false)
       val content = generateRandomContent(fileSize)
       outputStream.write(content)
@@ -30,7 +30,27 @@ class DirectoryGenerator(currentPath: String) {
 
       fileList = fileList :+ new FileNode(root, "testFile_" + i.toString, Container.getHashGenerator.generate(content))
     }
-    root.children = fileList
+    root.children = root.children ::: fileList
+  }
+
+  def generateRandomDirectories(parent: DirectoryNode, depth: Int): List[DirectoryNode] = {
+    var fileList = List[DirectoryNode]()
+    for (i <- 1 to depth) {
+      createEmptyDirectory(parent.getFullPath + "/testDirectory_" + i.toString)
+      fileList = fileList :+ new DirectoryNode(parent, "testDirectory_" + i.toString, List())
+    }
+    parent.children = parent.children ::: fileList
+    fileList
+  }
+
+  def generateRandomTree(parent: DirectoryNode, depth: Int): Unit = {
+    if (depth > 0) {
+      val generatedDirectories = generateRandomDirectories(parent, depth)
+      for (directory <- generatedDirectories) {
+        generateRandomTree(directory, depth - 1)
+        generateRandomFiles(directory, directory.getFullPath, depth)
+      }
+    }
   }
 
   def generateExampleDirectory(directoryName: String): DirectoryTree = {
@@ -38,7 +58,7 @@ class DirectoryGenerator(currentPath: String) {
     val rootNode = new DirectoryNode(null, fullDirectoryName, List())
     val directoryTree = new DirectoryTree(fullDirectoryName, rootNode)
     createEmptyDirectory(fullDirectoryName)
-    generateRandomFiles(rootNode, fullDirectoryName, 10)
+    generateRandomTree(rootNode, 3)
     directoryTree
   }
 
