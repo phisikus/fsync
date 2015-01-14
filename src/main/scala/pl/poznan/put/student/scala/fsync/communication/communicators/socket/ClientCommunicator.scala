@@ -8,8 +8,8 @@ import pl.poznan.put.student.scala.fsync.communication.Communicator
 import pl.poznan.put.student.scala.fsync.communication.message.{Message, ParticipantHandle}
 
 class ClientCommunicator(actor: Participant, args: Array[String]) extends Communicator {
-  override val participant: Participant = _
-  override val localHandle: ParticipantHandle = _
+  override val participant: Participant = actor
+  override val localHandle: ParticipantHandle = new ClientHandle()
   var clientSocket: Socket = _
 
 
