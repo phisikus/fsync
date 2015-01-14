@@ -38,23 +38,33 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
     }).run()
   }
 
-  def onClientConnected(connectionSocket: Socket) {
-    println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+  def receiveMessageAndGetResponseFromActor(connectionSocket: Socket): Message = {
     val messageFromClient = getMessageFromClient(connectionSocket)
     messageFromClient.sender = new ClientHandle()
     messageFromClient.sender.hostName = connectionSocket.getRemoteSocketAddress.toString
     println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
-    if (messageToClient != null) {
-      val outputToClient = new ObjectOutputStream(connectionSocket.getOutputStream)
+    if (messageToClient != null)
       messageToClient.sender = messageFromClient.recipient
-      outputToClient.writeObject(messageToClient)
-      outputToClient.close()
-      println(Console.BLUE + "Sent " + messageToClient.messageType.toString + " to " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+    messageToClient
+  }
 
+  def onClientConnected(connectionSocket: Socket) {
+    println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+    val messageToClient = receiveMessageAndGetResponseFromActor(connectionSocket)
+
+    if (messageToClient != null) {
+      sendMessageToClient(connectionSocket, messageToClient)
     }
     connectionSocket.close()
     println(Console.CYAN + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+  }
+
+  def sendMessageToClient(connectionSocket: Socket, messageToClient: Message) {
+    val outputToClient = new ObjectOutputStream(connectionSocket.getOutputStream)
+    outputToClient.writeObject(messageToClient)
+    outputToClient.close()
+    println(Console.BLUE + "Sent " + messageToClient.messageType.toString + " to " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
   }
 
   def getMessageFromClient(connectionSocket: Socket): Message = {
