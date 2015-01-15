@@ -20,7 +20,7 @@ trait TreeNode extends Serializable {
     def isParentEqualIfPresent(extNode: TreeNode): Boolean = {
       extNode.parent match {
         case _: TreeNode => extNode.parent.equals(parent)
-        case _ => true
+        case _ => parent == null
       }
     }
     val node = obj.asInstanceOf[TreeNode]
