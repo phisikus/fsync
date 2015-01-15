@@ -5,8 +5,8 @@ import pl.poznan.put.student.scala.fsync.utils._
 
 class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: List[TreeNode]) extends TreeNode {
   override var children: List[TreeNode] = childNodes
-  val hashGenerator = Container.getHashGenerator
-  var _hash: String = _
+  private val hashGenerator = Container.getHashGenerator
+  private var _hash: String = _
 
   override def parent: TreeNode = parentNode
 
@@ -16,16 +16,18 @@ class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: Lis
     _hash
   }
 
-  def generateHash: String = {
+  private def generateHash: String = {
     val listOfHashes = children.map((node) => hashGenerator.generate(node.name + node.hash))
-    var combinedHashes = ""
-    if (listOfHashes.nonEmpty) {
-      combinedHashes = listOfHashes.reduce((result, element) => {
-        result + element
-      })
+
+    def combineHashes(list: List[String]): String = {
+      if (listOfHashes.nonEmpty) {
+        listOfHashes.reduce((result, element) => {
+          result + element
+        }) + name
+      } else
+        name
     }
-    combinedHashes = combinedHashes + name
-    _hash = hashGenerator.generate(combinedHashes)
+    _hash = hashGenerator.generate(combineHashes(listOfHashes))
     _hash
   }
 
