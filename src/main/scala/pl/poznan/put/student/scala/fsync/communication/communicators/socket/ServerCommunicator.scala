@@ -13,29 +13,40 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
   override val localHandle: ParticipantHandle = new ServerHandle()
   val serverSocket = new ServerSocket(localHandle.port)
 
-
   override def run(): Unit = {
+    this.initialize()
+  }
+
+  def initialize(): Unit = {
     println(Console.GREEN + "Initializing server " + localHandle.hostName + ":" + localHandle.port.toString + " ..." + Console.RESET)
     participant.onInitialize(args)
     println(Console.GREEN + "Server ready." + Console.RESET)
     while (true) {
       val connectionSocket = serverSocket.accept()
+      println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
       handleConnectionInNewThread(connectionSocket)
     }
 
-  }
-
-
-  def initialize(): Unit = {
-    this.run()
   }
 
   def handleConnectionInNewThread(connectionSocket: Socket) {
     new Thread(new Runnable {
       override def run() = {
         onClientConnected(connectionSocket)
+        connectionSocket.close()
+        println(Console.CYAN + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
       }
     }).run()
+  }
+
+  def onClientConnected(connectionSocket: Socket) {
+    val messageToClient = receiveMessageAndGetResponseFromActor(connectionSocket)
+
+    if (messageToClient != null) {
+      sendMessageToClient(connectionSocket, messageToClient)
+      onClientConnected(connectionSocket)
+    }
+
   }
 
   def receiveMessageAndGetResponseFromActor(connectionSocket: Socket): Message = {
@@ -44,20 +55,10 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
     messageFromClient.sender.hostName = connectionSocket.getRemoteSocketAddress.toString
     println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
-    if (messageToClient != null)
-      messageToClient.sender = messageFromClient.recipient
-    messageToClient
-  }
-
-  def onClientConnected(connectionSocket: Socket) {
-    println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
-    val messageToClient = receiveMessageAndGetResponseFromActor(connectionSocket)
-
     if (messageToClient != null) {
-      sendMessageToClient(connectionSocket, messageToClient)
+      messageToClient.sender = messageFromClient.recipient
     }
-    connectionSocket.close()
-    println(Console.CYAN + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+    messageToClient
   }
 
   def sendMessageToClient(connectionSocket: Socket, messageToClient: Message) {
