@@ -17,17 +17,18 @@ trait TreeNode extends Serializable {
   }
 
   override def equals(obj: scala.Any): Boolean = {
-    var result = false
-    val node = obj.asInstanceOf[TreeNode]
-    if (node != null) {
-      result = name.equals(node.name) && hash.equals(node.hash) && isDirectory.equals(node.isDirectory)
-      if (node.parent != null) {
-        result && node.parent.equals(parent)
-      } else {
-        result
+    def isParentEqualIfPresent(extNode: TreeNode): Boolean = {
+      extNode.parent match {
+        case _: TreeNode => extNode.parent.equals(parent)
+        case _ => true
       }
     }
-    result
+    val node = obj.asInstanceOf[TreeNode]
+    node match {
+      case n: TreeNode => name.equals(n.name) && hash.equals(n.hash) && isDirectory.equals(n.isDirectory) && isParentEqualIfPresent(n)
+      case _ => false
+    }
+
   }
 
   def getFullPath: String = {
