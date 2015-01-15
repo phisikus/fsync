@@ -30,11 +30,10 @@ trait TreeNode extends Serializable {
     result
   }
 
-  def getFullPath : String = {
-    if(parent != null) {
-      parent.getFullPath + '/' + name
-    } else {
-      name
+  def getFullPath: String = {
+    parent match {
+      case p: TreeNode => parent.getFullPath + '/' + name
+      case _ => name
     }
   }
 }
