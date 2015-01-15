@@ -1,7 +1,7 @@
 package pl.poznan.put.student.scala.fsync.communication.communicators.socket
 
 import java.io.{ObjectInputStream, ObjectOutputStream}
-import java.net.Socket
+import java.net.{InetAddress, Socket}
 
 import pl.poznan.put.student.scala.fsync.actors.Participant
 import pl.poznan.put.student.scala.fsync.communication.Communicator
@@ -10,18 +10,21 @@ import pl.poznan.put.student.scala.fsync.communication.message.{Message, Partici
 class ClientCommunicator(actor: Participant, args: Array[String]) extends Communicator {
   override val participant: Participant = actor
   override val localHandle: ParticipantHandle = new ClientHandle()
+  val clientHandle : ParticipantHandle = new ClientHandle()
   var clientSocket: Socket = _
+
+  def prepareClientSocket(): Unit = {
+    localHandle.hostName = InetAddress.getLocalHost.getHostAddress
+    clientHandle.hostName = args(1)
+    clientHandle.port = localHandle.port
+    clientSocket = new Socket(clientHandle.hostName, clientHandle.port)
+  }
 
 
   def initialize() = {
-    localHandle.hostName = args(0)
-    clientSocket = new Socket(localHandle.hostName, localHandle.port)
     val messageToSend = participant.onInitialize(args)
     if (messageToSend != null) {
-      messageToSend.sender = localHandle
-      val outputToClient = new ObjectOutputStream(clientSocket.getOutputStream)
-      outputToClient.writeObject(messageToSend)
-      outputToClient.close()
+      sendMessageToClient(messageToSend)
       var continue = true
       while (continue) {
         val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
@@ -29,10 +32,8 @@ class ClientCommunicator(actor: Participant, args: Array[String]) extends Commun
         inputFromServer.close()
         val messageToSend = participant.onMessageReceived(messageFromServer)
         if (messageToSend != null) {
-          messageToSend.sender = localHandle
-          val outputToClient = new ObjectOutputStream(clientSocket.getOutputStream)
-          outputToClient.writeObject(messageToSend)
-          outputToClient.close()
+          sendMessageToClient(messageToSend)
+
         } else {
           continue = false
         }
@@ -40,6 +41,13 @@ class ClientCommunicator(actor: Participant, args: Array[String]) extends Commun
     }
     clientSocket.close()
 
+  }
+
+  def sendMessageToClient(messageToSend: Message) {
+    messageToSend.sender = localHandle
+    val outputToClient = new ObjectOutputStream(clientSocket.getOutputStream)
+    outputToClient.writeObject(messageToSend)
+    outputToClient.close()
   }
 
   initialize()
