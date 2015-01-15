@@ -2,14 +2,13 @@ package pl.poznan.put.student.scala.fsync.tree.difference.generator
 
 import java.nio.file.{Files, Paths}
 
-import java.lang.IllegalArgumentException
 import pl.poznan.put.student.scala.fsync.tree.difference.types.{CreateDirectory, CreateFile, DeleteFileOrDirectory, ReplaceContent}
 import pl.poznan.put.student.scala.fsync.tree.difference.{DifferenceGenerator, NodeDifference, TreeDifference}
 import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
 
 class BasicDifferenceGenerator extends DifferenceGenerator {
 
-  def removeNodesDifference(nodes: List[TreeNode]): List[NodeDifference] = {
+  private def removeNodesDifference(nodes: List[TreeNode]): List[NodeDifference] = {
     nodes match {
       case head :: tail =>
         removeNodesDifference(tail) :+ new DeleteFileOrDirectory(head.getFullPath)
@@ -17,7 +16,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     }
   }
 
-  def findByName(name: String, nodes: List[TreeNode]): TreeNode = {
+  private def findByName(name: String, nodes: List[TreeNode]): TreeNode = {
     nodes match {
       case head :: tail =>
         if (head.name.equals(name))
@@ -29,7 +28,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     }
   }
 
-  def pairIntersectingNodes(a: List[TreeNode], b: List[TreeNode]): List[Tuple2[TreeNode, TreeNode]] = {
+  private def pairIntersectingNodes(a: List[TreeNode], b: List[TreeNode]): List[Tuple2[TreeNode, TreeNode]] = {
     val allPairs = a.flatMap(x => b.map(y => (x, y)))
 
     def matchingPairs(pairs: List[Tuple2[TreeNode, TreeNode]]): List[Tuple2[TreeNode, TreeNode]] = {
@@ -45,12 +44,12 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     matchingPairs(allPairs)
   }
 
-  def getContentForNode(node: TreeNode): Array[Byte] = {
+  private def getContentForNode(node: TreeNode): Array[Byte] = {
     Files.readAllBytes(Paths.get(node.getFullPath))
   }
 
 
-  def handleCommonNodes(list: List[Tuple2[TreeNode, TreeNode]]): List[NodeDifference] = {
+  private def handleCommonNodes(list: List[Tuple2[TreeNode, TreeNode]]): List[NodeDifference] = {
     //    - if both are files -> update the one on the right
     //    - if left one is file and right is directory -> remove file, add directory recursively
     //    - if left one is directory and right is a file -> remove directory, add right file
@@ -73,7 +72,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
   }
 
-  def removeNodesDifferences(list: List[TreeNode]): List[NodeDifference] = {
+  private def removeNodesDifferences(list: List[TreeNode]): List[NodeDifference] = {
     // nodes exclusive on the left side should be removed, because they don't exist in new version
     list match {
       case head :: tail =>
@@ -82,7 +81,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     }
   }
 
-  def createNodesDifferences(list: List[TreeNode]): List[NodeDifference] = {
+  private def createNodesDifferences(list: List[TreeNode]): List[NodeDifference] = {
     // nodes exclusive on the right side should be added, because they don't exist in old version
     list match {
       case head :: tail =>
@@ -95,7 +94,7 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
   }
 
 
-  def diffNodeList(a: List[TreeNode], b: List[TreeNode]): List[NodeDifference] = {
+  private def diffNodeList(a: List[TreeNode], b: List[TreeNode]): List[NodeDifference] = {
     val leftDiff = a.toSet.diff(b.toSet).toList
     val rightDiff = b.toSet.diff(a.toSet).toList
     val intersectingNodesTuples = pairIntersectingNodes(leftDiff, rightDiff)
@@ -106,10 +105,8 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
   }
 
-  def generateTreeDifference(sourceRoot: TreeNode, destinationRoot: TreeNode): TreeDifference = {
-    val treeDifference = new TreeDifference()
-    treeDifference.nodeDifferences = diffNodeList(sourceRoot.children, destinationRoot.children)
-    treeDifference
+  private def generateTreeDifference(sourceRoot: TreeNode, destinationRoot: TreeNode): TreeDifference = {
+    new TreeDifference(diffNodeList(sourceRoot.children, destinationRoot.children))
   }
 
   override def generate(sourceTree: DirectoryTree, resultTree: DirectoryTree): TreeDifference = {
