@@ -5,6 +5,6 @@ import java.net.InetAddress
 import pl.poznan.put.student.scala.fsync.communication.message.ParticipantHandle
 
 class ServerHandle extends ParticipantHandle {
-  hostName = InetAddress.getLocalHost.getHostAddress
-
+  override val hostName: String = InetAddress.getLocalHost.getHostAddress
+  override val id: String = null
 }
