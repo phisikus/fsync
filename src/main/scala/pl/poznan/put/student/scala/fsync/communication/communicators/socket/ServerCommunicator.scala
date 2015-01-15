@@ -53,8 +53,6 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
 
   def receiveMessageAndGetResponseFromActor(connectionSocket: Socket): Message = {
     val messageFromClient = getMessageFromClient(connectionSocket)
-    messageFromClient.sender = new ClientHandle()
-    messageFromClient.sender.hostName = connectionSocket.getRemoteSocketAddress.toString
     println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
     if (messageToClient != null) {

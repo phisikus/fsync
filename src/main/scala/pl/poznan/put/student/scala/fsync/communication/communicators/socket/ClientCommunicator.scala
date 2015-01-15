@@ -9,41 +9,36 @@ import pl.poznan.put.student.scala.fsync.communication.message.{Message, Partici
 
 class ClientCommunicator(actor: Participant, args: Array[String]) extends Communicator {
   override val participant: Participant = actor
-  override val localHandle: ParticipantHandle = new ClientHandle()
-  val clientHandle : ParticipantHandle = new ClientHandle()
-  var clientSocket: Socket = _
+  override val localHandle: ParticipantHandle = new ClientHandle(InetAddress.getLocalHost.getHostAddress)
+  val clientHandle: ParticipantHandle = new ClientHandle(args(1))
 
-  def prepareClientSocket(): Unit = {
-    localHandle.hostName = InetAddress.getLocalHost.getHostAddress
-    clientHandle.hostName = args(1)
-    clientHandle.port = localHandle.port
-    clientSocket = new Socket(clientHandle.hostName, clientHandle.port)
+  def prepareClientSocket(): Socket = {
+    new Socket(clientHandle.hostName, clientHandle.port)
   }
-
 
   def initialize() = {
+    val clientSocket = prepareClientSocket()
     val messageToSend = participant.onInitialize(args)
-    if (messageToSend != null) {
-      sendMessageToClient(messageToSend)
-      var continue = true
-      while (continue) {
-        val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
-        val messageFromServer = inputFromServer.readObject().asInstanceOf[Message]
-        inputFromServer.close()
-        val messageToSend = participant.onMessageReceived(messageFromServer)
-        if (messageToSend != null) {
-          sendMessageToClient(messageToSend)
-
-        } else {
-          continue = false
-        }
-      }
-    }
+    clientLoop(clientSocket, messageToSend)
     clientSocket.close()
-
   }
 
-  def sendMessageToClient(messageToSend: Message) {
+  protected def clientLoop(clientSocket: Socket, messageToServer: Message): Unit = {
+    if (messageToServer != null) {
+      sendMessageToClient(clientSocket, messageToServer)
+      val messageFromServer = getMessageFromServer(clientSocket)
+      clientLoop(clientSocket, participant.onMessageReceived(messageFromServer))
+    }
+  }
+
+  protected def getMessageFromServer(clientSocket: Socket): Message = {
+    val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
+    val messageFromServer = inputFromServer.readObject().asInstanceOf[Message]
+    inputFromServer.close()
+    messageFromServer
+  }
+
+  protected def sendMessageToClient(clientSocket: Socket, messageToSend: Message) {
     messageToSend.sender = localHandle
     val outputToClient = new ObjectOutputStream(clientSocket.getOutputStream)
     outputToClient.writeObject(messageToSend)
