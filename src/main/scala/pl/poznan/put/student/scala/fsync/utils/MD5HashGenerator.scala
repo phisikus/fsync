@@ -5,13 +5,12 @@ import java.security.MessageDigest
 
 class MD5HashGenerator extends HashGenerator {
 
-  val messageDigest = MessageDigest.getInstance("MD5")
-
   def generate(content: String): String = {
     generate(content.getBytes)
   }
 
   def generate(content: Array[Byte]): String = {
+    val messageDigest = MessageDigest.getInstance("MD5")
     val sum = messageDigest.digest(content).toList
 
     def toHexString(b: List[Byte]): String = {
