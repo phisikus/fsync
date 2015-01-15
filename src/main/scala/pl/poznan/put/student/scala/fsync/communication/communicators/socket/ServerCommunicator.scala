@@ -11,22 +11,24 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
 
   override val participant: Participant = actor
   override val localHandle: ParticipantHandle = new ServerHandle()
-  val serverSocket = new ServerSocket(localHandle.port)
 
   override def run(): Unit = {
     this.initialize()
+  }
+
+  def serverLoop(serverSocket: ServerSocket) {
+    val connectionSocket = serverSocket.accept()
+    println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+    handleConnectionInNewThread(connectionSocket)
+    serverLoop(serverSocket)
   }
 
   def initialize(): Unit = {
     println(Console.GREEN + "Initializing server " + localHandle.hostName + ":" + localHandle.port.toString + " ..." + Console.RESET)
     participant.onInitialize(args)
     println(Console.GREEN + "Server ready." + Console.RESET)
-    while (true) {
-      val connectionSocket = serverSocket.accept()
-      println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
-      handleConnectionInNewThread(connectionSocket)
-    }
-
+    val serverSocket = new ServerSocket(localHandle.port)
+    serverLoop(serverSocket)
   }
 
   def handleConnectionInNewThread(connectionSocket: Socket) {
@@ -56,7 +58,7 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
     println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
     if (messageToClient != null) {
-      messageToClient.sender = messageFromClient.recipient
+      messageToClient.sender = localHandle
     }
     messageToClient
   }
