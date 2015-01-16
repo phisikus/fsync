@@ -10,10 +10,9 @@ class Client extends Participant {
     msg.messageType match {
       case MessageType.PullResponse =>
         println(Console.YELLOW + "Applying changes..." + Console.RESET)
-        println(msg.difference)
-        msg.difference.apply()
+        msg.difference.applyInteractive()
         println(Console.GREEN + "Changes pulled.")
-        null
+        new Message(MessageType.Goodbye, null, null)
       case _ =>
         println(Console.RED + "Invalid message." + Console.RESET)
         null
@@ -34,7 +33,7 @@ class Client extends Participant {
     }
   }
 
-  private def getLocalDirectoryTree(directoryName : String): DirectoryTree = {
+  private def getLocalDirectoryTree(directoryName: String): DirectoryTree = {
     Container.getTreeBuilder.generateTree(directoryName)
   }
 

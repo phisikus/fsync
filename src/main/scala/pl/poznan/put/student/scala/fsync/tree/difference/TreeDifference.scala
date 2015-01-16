@@ -15,6 +15,17 @@ class TreeDifference(differences: List[NodeDifference]) extends Serializable {
     applyNodeDifferences(nodeDifferences)
   }
 
+  def applyInteractive(): Unit = {
+    def applyNodeDifferencesInteractive(list: List[NodeDifference], askQuestion : Boolean): Unit = {
+      if (list.length > 0) {
+        applyNodeDifferencesInteractive(list.tail, list.head.applyInteractive(askQuestion))
+      }
+    }
+
+    applyNodeDifferencesInteractive(nodeDifferences, true)
+
+  }
+
   override def toString: String = {
     "\n{ nodeDifferences: " + nodeDifferences.toString + " }"
   }
