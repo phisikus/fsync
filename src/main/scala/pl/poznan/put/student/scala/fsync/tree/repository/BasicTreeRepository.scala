@@ -10,7 +10,7 @@ class BasicTreeRepository extends TreeRepository {
 
   private def generateEmptyTree(name: String): DirectoryTree = {
     val file = new File(name)
-    if(file.exists) {
+    if(!file.exists) {
       file.mkdirs()
     }
     Container.getTreeBuilder.generateTree(name)

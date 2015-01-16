@@ -6,6 +6,7 @@ import pl.poznan.put.student.scala.fsync.communication.communicators.socket.{Ser
 object Fsync extends App {
 
   override def main(args: Array[String]): Unit = {
+    println(Console.GREEN + "File synchronization tool [v1.0] El Fartas & Biernacki" + Console.RESET)
     val errorCode = analyzeArguments(args)
     if (errorCode == 1) {
       println(Console.RED + "Invalid argument" + Console.RESET)
@@ -17,7 +18,6 @@ object Fsync extends App {
   def analyzeArguments(args: Array[String]): Int = {
     args.length match {
       case 0 =>
-        println(Console.GREEN + "File synchronization tool [v1.0] El Fartas & Biernacki" + Console.RESET)
         println(Console.YELLOW + "usage: fsync <mode> <command> <address>" + Console.RESET)
         println("<mode>          - server/client")
         println("<command>       - pull/push (only client mode)")
