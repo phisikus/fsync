@@ -56,8 +56,12 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     //    - if both are directories -> call this function with their content lists
     list match {
       case head :: tail =>
-        if (!head._1.isDirectory && !head._2.isDirectory)
-          return List(new ReplaceContent(head._2.getFullPath, getContentForNode(head._2))) ::: handleCommonNodes(tail)
+        if (!head._1.isDirectory && !head._2.isDirectory) {
+          if(!head._1.equals(head._2))
+            return List(new ReplaceContent(head._2.getFullPath, getContentForNode(head._2))) ::: handleCommonNodes(tail)
+          else
+            return handleCommonNodes(tail)
+        }
         if (!head._1.isDirectory && head._2.isDirectory)
           return List(new DeleteFileOrDirectory(head._1.getFullPath)) ::: createNodesDifferences(List(head._2)) ::: handleCommonNodes(tail)
         if (head._1.isDirectory && !head._2.isDirectory)
@@ -113,6 +117,10 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     if (sourceTree.path != resultTree.path) {
       throw new IllegalArgumentException("Trees relate to different directories")
     }
-    generateTreeDifference(sourceTree.root, resultTree.root)
+
+    /*if (sourceTree.equals(resultTree))
+      new TreeDifference(List())
+    else*/
+      generateTreeDifference(sourceTree.root, resultTree.root)
   }
 }
