@@ -7,7 +7,7 @@ import pl.poznan.put.student.scala.fsync.actors.Participant
 import pl.poznan.put.student.scala.fsync.communication.Communicator
 import pl.poznan.put.student.scala.fsync.communication.message.{Message, ParticipantHandle}
 
-class ServerCommunicator(actor: Participant, args: Array[String]) extends Communicator with Runnable {
+class ServerCommunicator(actor: Participant, args: Map[String, String]) extends Communicator with Runnable {
 
   override val participant: Participant = actor
   override val localHandle: ParticipantHandle = new ServerHandle()
@@ -34,9 +34,13 @@ class ServerCommunicator(actor: Participant, args: Array[String]) extends Commun
   def handleConnectionInNewThread(connectionSocket: Socket) {
     new Thread(new Runnable {
       override def run() = {
-        onClientConnected(connectionSocket)
-        connectionSocket.close()
-        println(Console.CYAN + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+        try {
+          onClientConnected(connectionSocket)
+          connectionSocket.close()
+          println(Console.CYAN + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+        } catch {
+          case e: Exception => println(Console.RED + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+        }
       }
     }).run()
   }

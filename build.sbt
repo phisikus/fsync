@@ -10,4 +10,5 @@ libraryDependencies ++= Seq(
 		)
 
 assemblyJarName in assembly := "fsync.jar"
+
 mainClass in assembly := Some("pl.poznan.put.student.scala.fsync.cli.Fsync")

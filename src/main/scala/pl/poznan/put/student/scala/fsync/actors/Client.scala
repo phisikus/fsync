@@ -7,7 +7,8 @@ class Client extends Participant {
     null
   }
 
-  override def onInitialize(args: Array[String]): Message = {
+  override def onInitialize(args: Map[String, String]): Message = {
+    println("Command: " + args("command"))
     null
   }
 }
