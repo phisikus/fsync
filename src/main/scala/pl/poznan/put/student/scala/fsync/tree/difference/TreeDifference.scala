@@ -2,7 +2,8 @@ package pl.poznan.put.student.scala.fsync.tree.difference
 
 
 @SerialVersionUID(1L)
-class TreeDifference(differences: List[NodeDifference]) extends Serializable {
+class TreeDifference(treePath: String, differences: List[NodeDifference]) extends Serializable {
+  val path = treePath
   val nodeDifferences = differences
 
   def apply() = {
@@ -16,7 +17,7 @@ class TreeDifference(differences: List[NodeDifference]) extends Serializable {
   }
 
   def applyInteractive(): Unit = {
-    def applyNodeDifferencesInteractive(list: List[NodeDifference], askQuestion : Boolean): Unit = {
+    def applyNodeDifferencesInteractive(list: List[NodeDifference], askQuestion: Boolean): Unit = {
       if (list.length > 0) {
         applyNodeDifferencesInteractive(list.tail, list.head.applyInteractive(askQuestion))
       }

@@ -1,6 +1,7 @@
 package pl.poznan.put.student.scala.fsync.actors
 
 import pl.poznan.put.student.scala.fsync.communication.message.{MessageType, Message}
+import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 import pl.poznan.put.student.scala.fsync.utils.Container
 
 import scala.concurrent.Lock
@@ -14,14 +15,44 @@ class Server extends Participant {
   override def onMessageReceived(msg: Message): Message = {
     msg.messageType match {
       case MessageType.Pull =>
-        repositoryLock.acquire()
-        val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
-        val difference = differenceGenerator.generate(msg.tree, currentTree)
-        repositoryLock.release()
-        println(Console.BLUE + "Difference information about \"" + msg.tree.path + "\" created. There are " + difference.nodeDifferences.length.toString + " differences.")
-        new Message(MessageType.PullResponse, null, difference)
+        onPull(msg)
+      case MessageType.PullPush =>
+        onPullPush(msg)
+      case MessageType.Push =>
+        onPush(msg)
+
       case _ => null
     }
+  }
+
+  def onPush(msg: Message): Message = {
+    println(Console.BLUE + "Received difference information about \"" + msg.difference.path + "\" . There are " + msg.difference.nodeDifferences.length.toString + " differences.")
+    println(Console.BLUE + "Applying...")
+    msg.difference.apply()
+    treeRepository.rebuildDirectoryTree(msg.difference.path)
+    repositoryLock.release()
+    println(Console.GREEN + "Applied.")
+    new Message(MessageType.PushResponse, null, null)
+  }
+
+  def onPull(msg: Message): Message = {
+    repositoryLock.acquire()
+    val difference = generateTreeDifferenceFromMessage(msg)
+    repositoryLock.release()
+    println(Console.BLUE + "Difference information about \"" + msg.tree.path + "\" created. There are " + difference.nodeDifferences.length.toString + " differences.")
+    new Message(MessageType.PullResponse, null, difference)
+  }
+
+  private def generateTreeDifferenceFromMessage(msg: Message): TreeDifference = {
+    val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
+    differenceGenerator.generate(msg.tree, currentTree)
+  }
+
+  def onPullPush(msg: Message): Message = {
+    repositoryLock.acquire()
+    val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
+    println(Console.BLUE + "Tree structure of \"" + msg.tree.path + "\" for purpose of client's push created.")
+    new Message(MessageType.PullPushResponse, currentTree, null)
   }
 
   override def onInitialize(args: Map[String, String]): Message = {
