@@ -16,14 +16,14 @@ class TreeDifference(treePath: String, differences: List[NodeDifference]) extend
     applyNodeDifferences(nodeDifferences)
   }
 
-  def applyInteractive(): Unit = {
+  def applyInteractive(ask: Boolean): Unit = {
     def applyNodeDifferencesInteractive(list: List[NodeDifference], askQuestion: Boolean): Unit = {
       if (list.length > 0) {
         applyNodeDifferencesInteractive(list.tail, list.head.applyInteractive(askQuestion))
       }
     }
 
-    applyNodeDifferencesInteractive(nodeDifferences, true)
+    applyNodeDifferencesInteractive(nodeDifferences, ask)
 
   }
 
