@@ -33,6 +33,7 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
       sendMessageToServer(outputToServer, messageToServer)
       println(Console.BLUE + "Sent message " + messageToServer.messageType.toString + " to server.")
       val messageFromServer = getMessageFromServer(inputFromServer)
+      println(Console.BLUE + "Received " + messageFromServer.messageType.toString + " message from server.")
       clientLoop(inputFromServer, outputToServer, participant.onMessageReceived(messageFromServer))
     }
   }
