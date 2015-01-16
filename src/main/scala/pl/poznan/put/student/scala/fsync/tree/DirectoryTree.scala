@@ -1,8 +1,8 @@
 package pl.poznan.put.student.scala.fsync.tree
 
 @SerialVersionUID(1L)
-class DirectoryTree(fullPath: String, rootNode: TreeNode) extends Serializable {
-  val path: String = fullPath
+class DirectoryTree(startingPath: String, rootNode: TreeNode) extends Serializable {
+  val path: String = startingPath
   val root: TreeNode = rootNode
 
   def hash: String = {
