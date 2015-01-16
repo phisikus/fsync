@@ -1,10 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="882fa38d-de87-410a-b24d-7ebfe491cc4d" name="Default" comment="Server refactoring">
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala" />
+    <list default="true" id="882fa38d-de87-410a-b24d-7ebfe491cc4d" name="Default" comment="workspace change">
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/environment" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/environment" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ld.so.cache" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ld.so.cache" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/localtime" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/localtime" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/magic" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/magic" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/motd" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/motd" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/odbc.ini" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/odbc.ini" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/subgid" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/subgid" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/subuid" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/subuid" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/y" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/y" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/Muttrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/Muttrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/a2ps-site.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/a2ps-site.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/a2ps.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/a2ps.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/adduser.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/adduser.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/adjtime" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/adjtime" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/aliases" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/aliases" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/avrdude.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/avrdude.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/avserver.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/avserver.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/bash.bashrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/bash.bashrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/bash_completion" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/bash_completion" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/bindresvport.blacklist" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/bindresvport.blacklist" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ca-certificates.conf.dpkg-old" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ca-certificates.conf.dpkg-old" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ca-certificates.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ca-certificates.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/checkinstallrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/checkinstallrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/colord.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/colord.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/crontab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/crontab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/debconf.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/debconf.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/debian_version" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/debian_version" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/deluser.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/deluser.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/discover-modprobe.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/discover-modprobe.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/dnsmasq.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/dnsmasq.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/drirc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/drirc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/eclipse.ini" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/eclipse.ini" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/email-addresses" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/email-addresses" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/fpc-2.6.0.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/fpc-2.6.0.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/fpc-2.6.4.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/fpc-2.6.4.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/fpc.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/fpc.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/fstab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/fstab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/fuse.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/fuse.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/gai.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/gai.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/globash.rc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/globash.rc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/gnome-vfs-mime-magic" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/gnome-vfs-mime-magic" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/gpm.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/gpm.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/group" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/group" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/gssapi_mech.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/gssapi_mech.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/hddtemp.db" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/hddtemp.db" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/hdparm.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/hdparm.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/host.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/host.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/hostname" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/hostname" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/hosts.allow" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/hosts.allow" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/hosts.deny" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/hosts.deny" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/hosts" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/hosts" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/idmapd.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/idmapd.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/inetd.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/inetd.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/inittab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/inittab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/inputrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/inputrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/insserv.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/insserv.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/issue.net" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/issue.net" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/issue" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/issue" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/kernel-img.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/kernel-img.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/latex2html.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/latex2html.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ld.so.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ld.so.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/libao.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/libao.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/libaudit.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/libaudit.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/locale.alias" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/locale.alias" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/locale.gen" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/locale.gen" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/login.defs" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/login.defs" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/logrotate.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/logrotate.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/machine-id" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/machine-id" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/magic.mime" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/magic.mime" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mail.rc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mail.rc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mailcap.order" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mailcap.order" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mailcap" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mailcap" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mailname" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mailname" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/manpath.config" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/manpath.config" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mime.types" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mime.types" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mke2fs.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mke2fs.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/modules" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/modules" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mongodb.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mongodb.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/mtab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/mtab" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/nail.rc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/nail.rc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/nanorc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/nanorc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/netbeans.clusters" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/netbeans.clusters" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/netbeans.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/netbeans.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/netconfig" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/netconfig" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/netscsid.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/netscsid.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/networks" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/networks" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/nsswitch.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/nsswitch.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ntp.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ntp.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/odbcinst.ini" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/odbcinst.ini" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/os-release" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/os-release" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/pam.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/pam.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/papersize" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/papersize" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/pnm2ppa.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/pnm2ppa.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/printcap" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/printcap" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/profile" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/profile" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/protocols" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/protocols" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/publican-website.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/publican-website.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/quilt.quiltrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/quilt.quiltrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/rarfiles.lst" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/rarfiles.lst" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/rc.local" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/rc.local" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/rearj.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/rearj.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/reportbug.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/reportbug.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/resolv.conf.bak" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/resolv.conf.bak" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/resolv.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/resolv.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/rmt" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/rmt" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/rpc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/rpc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/rsyslog.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/rsyslog.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/screenrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/screenrc" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/securetty" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/securetty" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/sensors3.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/sensors3.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/services" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/services" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/shells" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/shells" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/smartd.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/smartd.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/smi.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/smi.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/staff-group-for-usr-local" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/staff-group-for-usr-local" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/sysctl.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/sysctl.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/sysfs.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/sysfs.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/timezone" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/timezone" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/trickled.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/trickled.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ts.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ts.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/ucf.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/ucf.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/updatedb.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/updatedb.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/usb_modeswitch.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/usb_modeswitch.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/vdpau_wrapper.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/vdpau_wrapper.cfg" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmp1/data/wodim.conf" />
+      <change type="NEW" beforePath="" afterPath="/media/HOME/home/phisikus/Git/fsync/tmps/data/wodim.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" />
@@ -34,28 +281,7 @@
     <favorites_list name="fsync" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TreeDifference.scala" pinned="false" current-in-tab="false">
-        <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.scala" pinned="false" current-in-tab="true">
-        <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7717391" vertical-offset="25" max-vertical-offset="945">
-              <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="/media/HOME/home/phisikus/Git/fsync" />
@@ -106,9 +332,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
-    <option name="width" value="1932" />
-    <option name="height" value="1050" />
+    <option name="width" value="1920" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -135,6 +360,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -153,80 +379,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fsync" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,6 +645,10 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -509,10 +668,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -600,6 +755,22 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -618,22 +789,6 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <extension name="scalaCoverage" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
       <method />
     </configuration>
     <list size="3">
@@ -707,7 +862,8 @@
       <workItem from="1421400059933" duration="2767000" />
       <workItem from="1421403000126" duration="40000" />
       <workItem from="1421403053026" duration="25582000" />
-      <workItem from="1421430465110" duration="860000" />
+      <workItem from="1421430465110" duration="895000" />
+      <workItem from="1421432340523" duration="282000" />
     </task>
     <task id="LOCAL-00001" summary="changed .idea">
       <created>1421140492335</created>
@@ -913,14 +1069,20 @@
       <option name="project" value="LOCAL" />
       <updated>1421430184729</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="final version?">
+      <created>1421431337119</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1421431337119</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86437000" />
+    <option name="totallyTimeSpent" value="86754000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1932" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -944,13 +1106,13 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.190625" sideWeight="0.4992126" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51319957" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -969,7 +1131,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="before real socket implementation" />
     <MESSAGE value="ServerCommunicator implemenetation &amp; reorganization" />
     <MESSAGE value="Multithreading in server" />
     <MESSAGE value="fixed missing .close() calls in streams" />
@@ -994,7 +1155,8 @@
     <MESSAGE value="check if trees are equal!" />
     <MESSAGE value="fixed cli message" />
     <MESSAGE value="push done?" />
-    <option name="LAST_COMMIT_MESSAGE" value="push done?" />
+    <MESSAGE value="final version?" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1193,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.048913043" vertical-offset="0" max-vertical-offset="920">
           <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,7 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6195652" vertical-offset="0" max-vertical-offset="920">
           <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,7 +1488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14802632" vertical-offset="0" max-vertical-offset="608">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,22 +1510,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39673913" vertical-offset="235" max-vertical-offset="1155">
           <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7717391" vertical-offset="85" max-vertical-offset="1005">
+          <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+        <state vertical-scroll-proportion="0.3423913" vertical-offset="0" max-vertical-offset="920">
           <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7717391" vertical-offset="25" max-vertical-offset="945">
-          <caret line="53" column="126" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
           <folding />
         </state>
       </provider>
