@@ -18,10 +18,10 @@ object Fsync extends App {
   def analyzeArguments(args: Array[String]): Int = {
     args.length match {
       case 0 =>
-        println(Console.YELLOW + "usage: fsync <mode> <command> <address>" + Console.RESET)
+        println(Console.YELLOW + "usage: fsync <mode> <command> <address> <directoryName>" + Console.RESET)
         println("<mode>          - server/client")
         println("<command>       - pull/push (only client mode)")
-        println("<address>       - ip address or hostname (only client mode) \n")
+        println("<address>       - ip address or hostname (only client mode)")
         println("<directoryName> - name of repository directory (only client mode) \n")
         1
       case 1 =>
