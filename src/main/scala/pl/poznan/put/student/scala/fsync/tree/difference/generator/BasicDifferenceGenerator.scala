@@ -118,9 +118,9 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
       throw new IllegalArgumentException("Trees relate to different directories")
     }
 
-    /*if (sourceTree.equals(resultTree))
+    if (sourceTree.equals(resultTree))
       new TreeDifference(List())
-    else*/
+    else
       generateTreeDifference(sourceTree.root, resultTree.root)
   }
 }
