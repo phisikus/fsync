@@ -56,7 +56,7 @@ class DirectoryGenerator(currentPath: String, exampleFileSize: Int, exampleDirec
   }
 
   def generateExampleDirectory(directoryName: String): DirectoryTree = {
-    val fullDirectoryName = currentPath + "/" + directoryName
+    val fullDirectoryName = directoryName
     val rootNode = new DirectoryNode(null, fullDirectoryName, List())
     val directoryTree = new DirectoryTree(fullDirectoryName, rootNode)
     createEmptyDirectory(fullDirectoryName)
