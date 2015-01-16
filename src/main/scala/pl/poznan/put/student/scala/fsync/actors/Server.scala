@@ -7,7 +7,7 @@ class Server extends Participant {
     null
   }
 
-  override def onInitialize(args: Array[String]): Message = {
+  override def onInitialize(args: Map[String, String]): Message = {
     null
   }
 }
