@@ -19,15 +19,19 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
   def initialize() = {
     val clientSocket = prepareClientSocket()
     val messageToSend = participant.onInitialize(args)
-    val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
     val outputToServer = new ObjectOutputStream(clientSocket.getOutputStream)
+    val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
     clientLoop(inputFromServer, outputToServer, messageToSend)
+    inputFromServer.close()
+    outputToServer.flush()
+    outputToServer.close()
     clientSocket.close()
   }
 
   protected def clientLoop(inputFromServer: ObjectInputStream, outputToServer: ObjectOutputStream, messageToServer: Message): Unit = {
     if (messageToServer != null) {
       sendMessageToServer(outputToServer, messageToServer)
+      println(Console.BLUE + "Sent message " + messageToServer.messageType.toString + " to server.")
       val messageFromServer = getMessageFromServer(inputFromServer)
       clientLoop(inputFromServer, outputToServer, participant.onMessageReceived(messageFromServer))
     }
@@ -35,7 +39,6 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
 
   protected def getMessageFromServer(inputFromServer: ObjectInputStream): Message = {
     val messageFromServer = inputFromServer.readObject().asInstanceOf[Message]
-    inputFromServer.close()
     messageFromServer
   }
 
@@ -43,7 +46,6 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
     messageToSend.sender = localHandle
     outputToServer.writeObject(messageToSend)
     outputToServer.flush()
-    outputToServer.close()
   }
 
 }
