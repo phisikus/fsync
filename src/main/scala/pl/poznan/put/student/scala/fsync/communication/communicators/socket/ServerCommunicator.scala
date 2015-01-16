@@ -38,6 +38,9 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
           val inputFromClient = new ObjectInputStream(connectionSocket.getInputStream)
           val outputToClient = new ObjectOutputStream(connectionSocket.getOutputStream)
           onClientConnected(inputFromClient, outputToClient)
+          inputFromClient.close()
+          outputToClient.flush()
+          outputToClient.close()
           connectionSocket.close()
           println(Console.RED + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
         } catch {
@@ -59,24 +62,23 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
 
   def receiveMessageAndGetResponseFromActor(inputStream: ObjectInputStream): Message = {
     val messageFromClient = getMessageFromClient(inputStream)
-    println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message ." + Console.RESET)
+    println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from client." + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
     if (messageToClient != null) {
       messageToClient.sender = localHandle
+      return messageToClient
     }
-    messageToClient
+    null
   }
 
   def sendMessageToClient(outputToClient: ObjectOutputStream, messageToClient: Message) {
     outputToClient.writeObject(messageToClient)
     outputToClient.flush()
-    outputToClient.close()
     println(Console.BLUE + "Sent " + messageToClient.messageType.toString + " message to client." + Console.RESET)
   }
 
   def getMessageFromClient(inputFromClient: ObjectInputStream): Message = {
     val messageFromClient = inputFromClient.readObject().asInstanceOf[Message]
-    inputFromClient.close()
     messageFromClient
   }
 }
