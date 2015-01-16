@@ -7,10 +7,10 @@ import pl.poznan.put.student.scala.fsync.actors.Participant
 import pl.poznan.put.student.scala.fsync.communication.Communicator
 import pl.poznan.put.student.scala.fsync.communication.message.{Message, ParticipantHandle}
 
-class ClientCommunicator(actor: Participant, args: Array[String]) extends Communicator {
+class ClientCommunicator(actor: Participant, address : String, args : Array[String]) extends Communicator {
   override val participant: Participant = actor
   override val localHandle: ParticipantHandle = new ClientHandle(InetAddress.getLocalHost.getHostAddress)
-  val clientHandle: ParticipantHandle = new ClientHandle(args(1))
+  val clientHandle: ParticipantHandle = new ClientHandle(address)
 
   def prepareClientSocket(): Socket = {
     new Socket(clientHandle.hostName, clientHandle.port)
