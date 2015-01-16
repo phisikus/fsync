@@ -24,13 +24,13 @@ object Fsync extends App {
         println("<address> - ip address or hostname (only client mode) \n")
         1
       case 1 =>
-        if (args(0) != "server") {
+        if (args(0).toLowerCase != "server") {
           1
         } else {
           becomeServer(args)
         }
       case 3 =>
-        if (args(0) != "client") {
+        if (args(0).toLowerCase != "client") {
           1
         } else {
           becomeClient(args)
@@ -43,7 +43,7 @@ object Fsync extends App {
 
   def becomeClient(args: Array[String]): Int = {
     val actor = new Client()
-    val arguments = Map("command" -> args(1), "address" -> args(2))
+    val arguments = Map("command" -> args(1).toLowerCase, "address" -> args(2).toLowerCase)
     val communicator = new ClientCommunicator(actor, arguments)
     communicator.initialize()
     0
