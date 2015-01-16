@@ -5,7 +5,7 @@ import java.net.{InetAddress, Socket}
 
 import pl.poznan.put.student.scala.fsync.actors.Participant
 import pl.poznan.put.student.scala.fsync.communication.Communicator
-import pl.poznan.put.student.scala.fsync.communication.message.{Message, ParticipantHandle}
+import pl.poznan.put.student.scala.fsync.communication.message.{MessageType, Message, ParticipantHandle}
 
 class ClientCommunicator(actor: Participant, args: Map[String, String]) extends Communicator {
   override val participant: Participant = actor
@@ -31,10 +31,12 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
   protected def clientLoop(inputFromServer: ObjectInputStream, outputToServer: ObjectOutputStream, messageToServer: Message): Unit = {
     if (messageToServer != null) {
       sendMessageToServer(outputToServer, messageToServer)
-      println(Console.BLUE + "Sent message " + messageToServer.messageType.toString + " to server.")
-      val messageFromServer = getMessageFromServer(inputFromServer)
-      println(Console.BLUE + "Received " + messageFromServer.messageType.toString + " message from server.")
-      clientLoop(inputFromServer, outputToServer, participant.onMessageReceived(messageFromServer))
+      if (messageToServer.messageType != MessageType.Goodbye) {
+        println(Console.BLUE + "Sent message " + messageToServer.messageType.toString + " to server.")
+        val messageFromServer = getMessageFromServer(inputFromServer)
+        println(Console.BLUE + "Received " + messageFromServer.messageType.toString + " message from server.")
+        clientLoop(inputFromServer, outputToServer, participant.onMessageReceived(messageFromServer))
+      }
     }
   }
 
