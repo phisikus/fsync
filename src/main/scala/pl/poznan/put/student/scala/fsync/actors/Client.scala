@@ -41,7 +41,7 @@ class Client extends Participant {
 
   def onPullResponse(msg: Message): Message = {
     println(Console.YELLOW + "Applying changes..." + Console.RESET)
-    msg.difference.applyInteractive()
+    msg.difference.applyInteractive(true)
     println(Console.GREEN + "Changes pulled.")
     new Message(MessageType.Goodbye, null, null)
   }

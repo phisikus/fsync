@@ -26,12 +26,12 @@ class Server extends Participant {
   }
 
   def onPush(msg: Message): Message = {
-    println(Console.BLUE + "Received difference information about \"" + msg.difference.path + "\" . There are " + msg.difference.nodeDifferences.length.toString + " differences.")
-    println(Console.BLUE + "Applying...")
-    msg.difference.apply()
+    println(Console.BLUE + "Received difference information about \"" + msg.difference.path + "\" . There are " + msg.difference.nodeDifferences.length.toString + " differences." + Console.RESET)
+    println(Console.BLUE + "Applying..." + Console.RESET)
+    msg.difference.applyInteractive(false)
     treeRepository.rebuildDirectoryTree(msg.difference.path)
     repositoryLock.release()
-    println(Console.GREEN + "Applied.")
+    println(Console.GREEN + "Applied." + Console.RESET)
     new Message(MessageType.PushResponse, null, null)
   }
 
@@ -39,7 +39,7 @@ class Server extends Participant {
     repositoryLock.acquire()
     val difference = generateTreeDifferenceFromMessage(msg)
     repositoryLock.release()
-    println(Console.BLUE + "Difference information about \"" + msg.tree.path + "\" created. There are " + difference.nodeDifferences.length.toString + " differences.")
+    println(Console.BLUE + "Difference information about \"" + msg.tree.path + "\" created. There are " + difference.nodeDifferences.length.toString + " differences." + Console.RESET)
     new Message(MessageType.PullResponse, null, difference)
   }
 
@@ -51,7 +51,7 @@ class Server extends Participant {
   def onPullPush(msg: Message): Message = {
     repositoryLock.acquire()
     val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
-    println(Console.BLUE + "Tree structure of \"" + msg.tree.path + "\" for purpose of client's push created.")
+    println(Console.BLUE + "Tree structure of \"" + msg.tree.path + "\" for purpose of client's push created." + Console.RESET)
     new Message(MessageType.PullPushResponse, currentTree, null)
   }
 
