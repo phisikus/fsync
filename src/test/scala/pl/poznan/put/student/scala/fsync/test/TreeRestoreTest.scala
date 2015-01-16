@@ -11,7 +11,7 @@ import pl.poznan.put.student.scala.fsync.tree.nodes.DirectoryNode
 class TreeRestoreTest extends FlatSpec with BeforeAndAfter {
   val basePath = new File(".").getAbsolutePath
   val exampleDirectoryName = "testDirectory"
-  val exampleDirectoryPath = basePath + "/" + exampleDirectoryName
+  val exampleDirectoryPath = exampleDirectoryName
   val directoryTreeBuilder = new DirectoryTreeBuilder()
   val directoryGenerator = new DirectoryGenerator(basePath, 1000, 3)
   val differenceGenerator = new BasicDifferenceGenerator()
