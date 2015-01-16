@@ -14,6 +14,7 @@ class Server extends Participant {
         val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
         val difference = differenceGenerator.generate(msg.tree, currentTree)
         println(Console.BLUE + "Difference information about " + msg.tree.path + " created.")
+        println(difference.toString)
         new Message(MessageType.PullResponse, null, difference)
       case _ => null
     }

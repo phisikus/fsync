@@ -1,17 +1,15 @@
 package pl.poznan.put.student.scala.fsync.actors
 
-import java.io.File
-
-import pl.poznan.put.student.scala.fsync.communication.message.{MessageType, Message}
+import pl.poznan.put.student.scala.fsync.communication.message.{Message, MessageType}
 import pl.poznan.put.student.scala.fsync.tree.DirectoryTree
 import pl.poznan.put.student.scala.fsync.utils.Container
 
 class Client extends Participant {
 
   override def onMessageReceived(msg: Message): Message = {
-    msg match {
+    msg.messageType match {
       case MessageType.PullResponse =>
-        println(Console.YELLOW + "Received pull response from server, applying changes..." + Console.RESET)
+        println(Console.YELLOW + "Applying changes..." + Console.RESET)
         println(msg.difference)
         msg.difference.apply()
         println(Console.GREEN + "Changes pulled.")
@@ -25,7 +23,7 @@ class Client extends Participant {
   override def onInitialize(args: Map[String, String]): Message = {
     args("command").toLowerCase match {
       case "pull" =>
-        val directoryTree = getLocalDirectoryTree
+        val directoryTree = getLocalDirectoryTree(args("directoryName"))
         println(Console.YELLOW + "Pulling metadata for directory: " + directoryTree.path + Console.RESET)
         new Message(MessageType.Pull, directoryTree, null)
       case "push" =>
@@ -36,8 +34,7 @@ class Client extends Participant {
     }
   }
 
-  private def getLocalDirectoryTree: DirectoryTree = {
-    val directoryName = new File(".").getAbsolutePath
+  private def getLocalDirectoryTree(directoryName : String): DirectoryTree = {
     Container.getTreeBuilder.generateTree(directoryName)
   }
 
