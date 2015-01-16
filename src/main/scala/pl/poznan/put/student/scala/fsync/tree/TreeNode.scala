@@ -19,7 +19,7 @@ trait TreeNode extends Serializable {
   override def equals(obj: scala.Any): Boolean = {
     def isParentEqualIfPresent(extNode: TreeNode): Boolean = {
       extNode.parent match {
-        case _: TreeNode => extNode.parent.equals(parent)
+        case _: TreeNode => extNode.parent.getFullPath.equals(parent.getFullPath)
         case _ => parent == null
       }
     }
