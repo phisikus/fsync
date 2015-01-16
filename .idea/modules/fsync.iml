@@ -4,10 +4,6 @@
     <output url="file:///media/HOME/home/phisikus/Git/fsync/target/scala-2.11/classes" />
     <output-test url="file:///media/HOME/home/phisikus/Git/fsync/target/scala-2.11/test-classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../..">
-      <sourceFolder url="file://$MODULE_DIR$/../../src/test/scala" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../src/main/scala" isTestSource="false" />
-    </content>
     <content url="file:///media/HOME/home/phisikus/Git/fsync">
       <sourceFolder url="file:///media/HOME/home/phisikus/Git/fsync/src/main/java" isTestSource="false" />
       <sourceFolder url="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala" isTestSource="false" />

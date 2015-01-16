@@ -19,9 +19,10 @@ object Fsync extends App {
       case 0 =>
         println(Console.GREEN + "File synchronization tool [v1.0] El Fartas & Biernacki" + Console.RESET)
         println(Console.YELLOW + "usage: fsync <mode> <command> <address>" + Console.RESET)
-        println("<mode>    - server/client")
-        println("<command> - pull/push (only client mode)")
-        println("<address> - ip address or hostname (only client mode) \n")
+        println("<mode>          - server/client")
+        println("<command>       - pull/push (only client mode)")
+        println("<address>       - ip address or hostname (only client mode) \n")
+        println("<directoryName> - name of repository directory (only client mode) \n")
         1
       case 1 =>
         if (args(0).toLowerCase != "server") {
@@ -29,7 +30,7 @@ object Fsync extends App {
         } else {
           becomeServer(args)
         }
-      case 3 =>
+      case 4 =>
         if (args(0).toLowerCase != "client") {
           1
         } else {
@@ -43,7 +44,7 @@ object Fsync extends App {
 
   def becomeClient(args: Array[String]): Int = {
     val actor = new Client()
-    val arguments = Map("command" -> args(1).toLowerCase, "address" -> args(2).toLowerCase)
+    val arguments = Map("command" -> args(1).toLowerCase, "address" -> args(2).toLowerCase, "directoryName" -> args(3))
     val communicator = new ClientCommunicator(actor, arguments)
     communicator.initialize()
     0

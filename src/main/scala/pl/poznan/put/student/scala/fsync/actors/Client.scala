@@ -9,7 +9,17 @@ import pl.poznan.put.student.scala.fsync.utils.Container
 class Client extends Participant {
 
   override def onMessageReceived(msg: Message): Message = {
-    null
+    msg match {
+      case MessageType.PullResponse =>
+        println(Console.YELLOW + "Received pull response from server, applying changes..." + Console.RESET)
+        println(msg.difference)
+        msg.difference.apply()
+        println(Console.GREEN + "Changes pulled.")
+        null
+      case _ =>
+        println(Console.RED + "Invalid message." + Console.RESET)
+        null
+    }
   }
 
   override def onInitialize(args: Map[String, String]): Message = {
@@ -18,7 +28,11 @@ class Client extends Participant {
         val directoryTree = getLocalDirectoryTree
         println(Console.YELLOW + "Pulling metadata for directory: " + directoryTree.path + Console.RESET)
         new Message(MessageType.Pull, directoryTree, null)
-      case _ => null
+      case "push" =>
+        null
+      case _ =>
+        println(Console.RED + "Invalid action \"" + args("command") + "\" " + Console.RESET)
+        null
     }
   }
 

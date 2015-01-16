@@ -1,7 +1,7 @@
 package pl.poznan.put.student.scala.fsync.communication.communicators.socket
 
-import java.io.{ObjectOutputStream, ObjectInputStream}
-import java.net.{Socket, ServerSocket}
+import java.io.{ObjectInputStream, ObjectOutputStream}
+import java.net.{ServerSocket, Socket}
 
 import pl.poznan.put.student.scala.fsync.actors.Participant
 import pl.poznan.put.student.scala.fsync.communication.Communicator
@@ -18,7 +18,7 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
 
   def serverLoop(serverSocket: ServerSocket) {
     val connectionSocket = serverSocket.accept()
-    println(Console.YELLOW + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+    println(Console.GREEN + "Accepted connection from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
     handleConnectionInNewThread(connectionSocket)
     serverLoop(serverSocket)
   }
@@ -35,29 +35,31 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
     new Thread(new Runnable {
       override def run() = {
         try {
-          onClientConnected(connectionSocket)
+          val inputFromClient = new ObjectInputStream(connectionSocket.getInputStream)
+          val outputToClient = new ObjectOutputStream(connectionSocket.getOutputStream)
+          onClientConnected(inputFromClient, outputToClient)
           connectionSocket.close()
-          println(Console.CYAN + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+          println(Console.RED + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
         } catch {
-          case e: Exception => println(Console.RED + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+          case e: Exception =>
+            println(Console.RED_B + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
         }
       }
     }).run()
   }
 
-  def onClientConnected(connectionSocket: Socket) {
-    val messageToClient = receiveMessageAndGetResponseFromActor(connectionSocket)
-
+  def onClientConnected(inputStream: ObjectInputStream, outputStream: ObjectOutputStream) {
+    val messageToClient = receiveMessageAndGetResponseFromActor(inputStream)
     if (messageToClient != null) {
-      sendMessageToClient(connectionSocket, messageToClient)
-      onClientConnected(connectionSocket)
+      sendMessageToClient(outputStream, messageToClient)
+      onClientConnected(inputStream, outputStream)
     }
 
   }
 
-  def receiveMessageAndGetResponseFromActor(connectionSocket: Socket): Message = {
-    val messageFromClient = getMessageFromClient(connectionSocket)
-    println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+  def receiveMessageAndGetResponseFromActor(inputStream: ObjectInputStream): Message = {
+    val messageFromClient = getMessageFromClient(inputStream)
+    println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message ." + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
     if (messageToClient != null) {
       messageToClient.sender = localHandle
@@ -65,15 +67,14 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
     messageToClient
   }
 
-  def sendMessageToClient(connectionSocket: Socket, messageToClient: Message) {
-    val outputToClient = new ObjectOutputStream(connectionSocket.getOutputStream)
+  def sendMessageToClient(outputToClient: ObjectOutputStream, messageToClient: Message) {
     outputToClient.writeObject(messageToClient)
+    outputToClient.flush()
     outputToClient.close()
-    println(Console.BLUE + "Sent " + messageToClient.messageType.toString + " to " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
+    println(Console.BLUE + "Sent " + messageToClient.messageType.toString + " message to client." + Console.RESET)
   }
 
-  def getMessageFromClient(connectionSocket: Socket): Message = {
-    val inputFromClient = new ObjectInputStream(connectionSocket.getInputStream)
+  def getMessageFromClient(inputFromClient: ObjectInputStream): Message = {
     val messageFromClient = inputFromClient.readObject().asInstanceOf[Message]
     inputFromClient.close()
     messageFromClient

@@ -16,11 +16,11 @@ class BasicTreeRepository extends TreeRepository {
     Container.getTreeBuilder.generateTree(name)
   }
 
-  override def getDirectoryTree(name: String): DirectoryTree = {
-    val trees = forest.filter(x => x.path.equals(name))
+  override def getDirectoryTree(directoryName: String): DirectoryTree = {
+    val trees = forest.filter(x => x.path.equals(directoryName))
     trees.length match {
       case x if x > 0 => trees(0)
-      case _ => generateEmptyTree(name)
+      case _ => generateEmptyTree(directoryName)
     }
   }
 }
