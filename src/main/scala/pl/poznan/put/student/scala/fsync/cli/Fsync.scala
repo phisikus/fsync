@@ -1,5 +1,7 @@
 package pl.poznan.put.student.scala.fsync.cli
 
+import java.nio.file.NoSuchFileException
+
 import pl.poznan.put.student.scala.fsync.actors.{Server, Client}
 import pl.poznan.put.student.scala.fsync.communication.communicators.socket.{ServerCommunicator, ClientCommunicator}
 
@@ -7,11 +9,22 @@ object Fsync extends App {
 
   override def main(args: Array[String]): Unit = {
     println(Console.GREEN + "File synchronization tool [v1.0] El Fartas & Biernacki" + Console.RESET)
-    val errorCode = analyzeArguments(args)
-    if (errorCode == 1) {
-      println(Console.RED + "Invalid argument" + Console.RESET)
+    try {
+      val errorCode = analyzeArguments(args)
+      if (errorCode == 1) {
+        println(Console.RED + "Invalid argument" + Console.RESET)
+      }
+      System.exit(errorCode)
     }
-    System.exit(errorCode)
+    catch {
+      case e: NoSuchFileException =>
+        println("Plik/katalog nie istnieje.")
+        System.exit(1)
+      case e: Exception =>
+        println(e.toString)
+        System.exit(1)
+    }
+
   }
 
 
