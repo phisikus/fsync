@@ -31,7 +31,7 @@ class Client extends Participant {
     println(Console.YELLOW + "Calculating push structures..." + Console.RESET)
     val localTree = getLocalDirectoryTree(msg.tree.path)
     val differenceTree = differenceGenerator.generate(msg.tree, localTree)
-    println(Console.GREEN + "Pushing changes...")
+    println(Console.GREEN + "Pushing changes..." + Console.RESET)
     new Message(MessageType.Push, null, differenceTree)
   }
 
@@ -42,7 +42,7 @@ class Client extends Participant {
   def onPullResponse(msg: Message): Message = {
     println(Console.YELLOW + "Applying changes..." + Console.RESET)
     msg.difference.applyInteractive(true)
-    println(Console.GREEN + "Changes pulled.")
+    println(Console.GREEN + "Changes pulled." + Console.RESET)
     new Message(MessageType.Goodbye, null, null)
   }
 
