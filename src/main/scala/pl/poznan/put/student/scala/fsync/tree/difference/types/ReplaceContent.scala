@@ -1,6 +1,6 @@
 package pl.poznan.put.student.scala.fsync.tree.difference.types
 
-import java.io.{FileNotFoundException, File, FileOutputStream}
+import java.io.{File, FileNotFoundException, FileOutputStream}
 
 import pl.poznan.put.student.scala.fsync.tree.difference.NodeDifference
 
