@@ -12,6 +12,7 @@ class BasicThread[A](task: () => A) {
 
   def join() = {
     thread.join()
+    this
   }
 
   thread.start()
