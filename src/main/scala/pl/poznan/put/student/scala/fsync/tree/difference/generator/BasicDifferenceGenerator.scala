@@ -5,6 +5,7 @@ import java.nio.file.{Files, Paths}
 import pl.poznan.put.student.scala.fsync.tree.difference.types.{CreateDirectory, CreateFile, DeleteFileOrDirectory, ReplaceContent}
 import pl.poznan.put.student.scala.fsync.tree.difference.{DifferenceGenerator, NodeDifference, TreeDifference}
 import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
+import pl.poznan.put.student.scala.fsync.utils.BasicThread
 
 class BasicDifferenceGenerator extends DifferenceGenerator {
 
@@ -114,7 +115,16 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     val intersectingNodesFlat = intersectingNodesTuples.flatMap(x => List(x._1, x._2))
     val exclusiveLeftNodes = leftDiff.diff(intersectingNodesFlat)
     val exclusiveRightNodes = rightDiff.diff(intersectingNodesFlat)
-    handleCommonNodes(intersectingNodesTuples) ::: removeNodesDifferences(exclusiveLeftNodes) ::: createNodesDifferences(exclusiveRightNodes)
+
+    val commonNodesDifferenceThread = new BasicThread[List[NodeDifference]](() => handleCommonNodes(intersectingNodesTuples))
+    val removeNodesDifferencesThread = new BasicThread[List[NodeDifference]](() => removeNodesDifferences(exclusiveLeftNodes))
+    val createNodesDifferencesThread = new BasicThread[List[NodeDifference]](() => createNodesDifferences(exclusiveRightNodes))
+
+    commonNodesDifferenceThread.join()
+    removeNodesDifferencesThread.join()
+    createNodesDifferencesThread.join()
+
+    commonNodesDifferenceThread.result ::: removeNodesDifferencesThread.result ::: createNodesDifferencesThread.result
 
   }
 
