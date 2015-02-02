@@ -2,7 +2,7 @@ package pl.poznan.put.student.scala.fsync.tree
 
 @SerialVersionUID(1L)
 trait TreeNode extends Serializable {
-  def parent: TreeNode
+  var parent: TreeNode
 
   var children: List[TreeNode]
 
