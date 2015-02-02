@@ -5,7 +5,7 @@ import java.net.{InetAddress, Socket}
 
 import pl.poznan.put.student.scala.fsync.actors.Participant
 import pl.poznan.put.student.scala.fsync.communication.Communicator
-import pl.poznan.put.student.scala.fsync.communication.message.{MessageType, Message, ParticipantHandle}
+import pl.poznan.put.student.scala.fsync.communication.message.{Message, MessageType, ParticipantHandle}
 
 class ClientCommunicator(actor: Participant, args: Map[String, String]) extends Communicator {
   override val participant: Participant = actor

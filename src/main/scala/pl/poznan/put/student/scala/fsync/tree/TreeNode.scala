@@ -33,7 +33,7 @@ trait TreeNode extends Serializable {
 
 
   override def hashCode(): Int = {
-    var hash : Int = 1
+    var hash: Int = 1
     hash = hash * 31 + name.hashCode
     hash = hash * 31 + hash.hashCode
     hash = hash * 31 + isDirectory.hashCode

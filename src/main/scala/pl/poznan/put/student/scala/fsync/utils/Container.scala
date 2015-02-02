@@ -1,9 +1,9 @@
 package pl.poznan.put.student.scala.fsync.utils
 
-import pl.poznan.put.student.scala.fsync.tree.builder.{TreeBuilder, DirectoryTreeBuilder}
+import pl.poznan.put.student.scala.fsync.tree.builder.{DirectoryTreeBuilder, TreeBuilder}
 import pl.poznan.put.student.scala.fsync.tree.difference.DifferenceGenerator
 import pl.poznan.put.student.scala.fsync.tree.difference.generator.BasicDifferenceGenerator
-import pl.poznan.put.student.scala.fsync.tree.repository.{TreeRepository, BasicTreeRepository}
+import pl.poznan.put.student.scala.fsync.tree.repository.{BasicTreeRepository, TreeRepository}
 
 object Container {
   val currentHashGenerator = new MD5HashGenerator()

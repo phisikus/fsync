@@ -2,8 +2,8 @@ package pl.poznan.put.student.scala.fsync.cli
 
 import java.nio.file.NoSuchFileException
 
-import pl.poznan.put.student.scala.fsync.actors.{Server, Client}
-import pl.poznan.put.student.scala.fsync.communication.communicators.socket.{ServerCommunicator, ClientCommunicator}
+import pl.poznan.put.student.scala.fsync.actors.{Client, Server}
+import pl.poznan.put.student.scala.fsync.communication.communicators.socket.{ClientCommunicator, ServerCommunicator}
 
 object Fsync extends App {
 
