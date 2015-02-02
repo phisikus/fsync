@@ -1,6 +1,6 @@
 package pl.poznan.put.student.scala.fsync.actors
 
-import pl.poznan.put.student.scala.fsync.communication.message.{MessageType, Message}
+import pl.poznan.put.student.scala.fsync.communication.message.{Message, MessageType}
 import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 import pl.poznan.put.student.scala.fsync.utils.Container
 
