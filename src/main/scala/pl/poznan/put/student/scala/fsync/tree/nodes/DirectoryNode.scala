@@ -7,7 +7,7 @@ class DirectoryNode(parentNode: TreeNode, directoryName: String, childNodes: Lis
   override var children: List[TreeNode] = childNodes
   private var _hash: String = _
 
-  override def parent: TreeNode = parentNode
+  override var parent: TreeNode = parentNode
 
   override def hash: String = {
     if (_hash == null)
