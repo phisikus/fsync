@@ -17,7 +17,7 @@ class DirectoryTreeBuilder extends TreeBuilder {
   }
 
   def getDirectoryNode(rootNode: TreeNode, path: Path, file: File): DirectoryNode = {
-    val listOfChildFiles = file.listFiles.toList.sorted
+    val listOfChildFiles = file.listFiles.toList.filter((f) => !Files.isSymbolicLink(f.toPath)).sorted
     val detachedChildNodes = buildChildNodes(listOfChildFiles)
     val directoryNode = new DirectoryNode(rootNode, path.getFileName.toString, detachedChildNodes)
     changeParent(detachedChildNodes, directoryNode)
