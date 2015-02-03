@@ -17,15 +17,21 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
   }
 
   def initialize() = {
-    val clientSocket = prepareClientSocket()
-    val messageToSend = participant.onInitialize(args)
-    val outputToServer = new ObjectOutputStream(clientSocket.getOutputStream)
-    val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
-    clientLoop(inputFromServer, outputToServer, messageToSend)
-    inputFromServer.close()
-    outputToServer.flush()
-    outputToServer.close()
-    clientSocket.close()
+    try {
+      val clientSocket = prepareClientSocket()
+      val messageToSend = participant.onInitialize(args)
+      val outputToServer = new ObjectOutputStream(clientSocket.getOutputStream)
+      val inputFromServer = new ObjectInputStream(clientSocket.getInputStream)
+      clientLoop(inputFromServer, outputToServer, messageToSend)
+      inputFromServer.close()
+      outputToServer.flush()
+      outputToServer.close()
+      clientSocket.close()
+    }
+    catch {
+      case e: Exception =>
+        participant.onCrush(e)
+    }
   }
 
   protected def clientLoop(inputFromServer: ObjectInputStream, outputToServer: ObjectOutputStream, messageToServer: Message): Unit = {

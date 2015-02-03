@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="882fa38d-de87-410a-b24d-7ebfe491cc4d" name="Default" comment="workspace change">
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" afterPath="$PROJECT_DIR$/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" />
-      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" />
+      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala" />
+      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientCommunicator.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientCommunicator.scala" />
+      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Participant.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Participant.scala" />
+      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/PathLock.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/PathLock.scala" />
+      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala" />
+      <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerCommunicator.scala" afterPath="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerCommunicator.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" afterPath="/media/HOME/home/phisikus/Git/fsync/.idea/workspace.xml" />
     </list>
@@ -33,30 +37,7 @@
     <favorites_list name="fsync" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DirectoryTreeBuilder.scala" pinned="false" current-in-tab="false">
-        <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1110">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="e#56#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicDifferenceGenerator.scala" pinned="false" current-in-tab="true">
-        <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72282606" vertical-offset="1060" max-vertical-offset="1980">
-              <caret line="120" column="80" selection-start-line="120" selection-start-column="80" selection-end-line="120" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="/media/HOME/home/phisikus/Git/fsync" />
@@ -78,16 +59,12 @@
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/ParticipantHandle.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerHandle.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientHandle.scala" />
-        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Participant.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/Message.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/test/scala/pl/poznan/put/student/scala/fsync/test/TreeRestoreTest.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/MessageType.scala" />
-        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientCommunicator.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/NodeDifference.scala" />
-        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerCommunicator.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/TreeDifference.scala" />
-        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/cli/Fsync.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/DirectoryTree.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/nodes/DirectoryNode.scala" />
@@ -98,10 +75,14 @@
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/repository/TreeRepository.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/repository/BasicTreeRepository.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/Container.scala" />
-        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/PathLock.scala" />
-        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala" />
         <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Participant.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerCommunicator.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientCommunicator.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/PathLock.scala" />
+        <option value="/media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala" />
       </list>
     </option>
   </component>
@@ -138,7 +119,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -302,10 +282,109 @@
               <option name="myItemId" value="fsync" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="communication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="communication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsync" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -797,7 +876,8 @@
       <workItem from="1422559311061" duration="2471000" />
       <workItem from="1422605886434" duration="28000" />
       <workItem from="1422892633816" duration="23187000" />
-      <workItem from="1422951569466" duration="758000" />
+      <workItem from="1422951569466" duration="3170000" />
+      <workItem from="1422955270485" duration="4254000" />
     </task>
     <task id="LOCAL-00001" summary="changed .idea">
       <created>1421140492335</created>
@@ -1045,11 +1125,23 @@
       <option name="project" value="LOCAL" />
       <updated>1422923054829</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="less threads">
+      <created>1422952340053</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1422952340053</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Tail recursion in createNodesDifferences to avoid stack overflow">
+      <created>1422954427178</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1422954427178</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115803000" />
+    <option name="totallyTimeSpent" value="122469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1058,7 +1150,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19746569" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19746569" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1067,7 +1159,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5068638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51531154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.190625" sideWeight="0.49841604" order="0" side_tool="false" content_ui="combo" />
@@ -1077,11 +1168,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.190625" sideWeight="0.500528" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51531154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1101,8 +1193,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="improving Communicators." />
-    <MESSAGE value="fp refactorings" />
     <MESSAGE value="more pattern matching" />
     <MESSAGE value="small fix" />
     <MESSAGE value="private methods, var -&gt; val changes" />
@@ -1126,7 +1216,9 @@
     <MESSAGE value="TreeBuilder with threads?" />
     <MESSAGE value="Threaded everything." />
     <MESSAGE value="Independent locks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Independent locks." />
+    <MESSAGE value="less threads" />
+    <MESSAGE value="Tail recursion in createNodesDifferences to avoid stack overflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tail recursion in createNodesDifferences to avoid stack overflow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1223,13 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/ParticipantHandle.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14802632" vertical-offset="0" max-vertical-offset="608">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/MD5HashGenerator.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2713816" vertical-offset="0" max-vertical-offset="608">
@@ -1241,13 +1326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.098684214" vertical-offset="0" max-vertical-offset="608">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientHandle.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.098684214" vertical-offset="0" max-vertical-offset="608">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1286,20 +1364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Participant.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097826086" vertical-offset="0" max-vertical-offset="920">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientCommunicator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79891306" vertical-offset="0" max-vertical-offset="920">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/types/DeleteFileOrDirectory.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32608697" vertical-offset="0" max-vertical-offset="920">
@@ -1328,38 +1392,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerCommunicator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6032609" vertical-offset="0" max-vertical-offset="1275">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/Communicator.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.097826086" vertical-offset="0" max-vertical-offset="920">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerHandle.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08152174" vertical-offset="0" max-vertical-offset="920">
-          <caret line="7" column="73" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39673913" vertical-offset="235" max-vertical-offset="1155">
-          <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/cli/Fsync.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29347825" vertical-offset="0" max-vertical-offset="1170">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1440,25 +1476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/Message.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08152174" vertical-offset="0" max-vertical-offset="920">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/DirectoryTree.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06521739" vertical-offset="0" max-vertical-offset="920">
           <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5597826" vertical-offset="55" max-vertical-offset="975">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1470,36 +1491,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/PathLock.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08152174" vertical-offset="0" max-vertical-offset="920">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/repository/BasicTreeRepository.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26086956" vertical-offset="0" max-vertical-offset="920">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1110">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#56#75#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/difference/generator/BasicDifferenceGenerator.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72282606" vertical-offset="1060" max-vertical-offset="1980">
-          <caret line="120" column="80" selection-start-line="120" selection-start-column="80" selection-end-line="120" selection-end-column="80" />
+        <state vertical-scroll-proportion="1.7152467" vertical-offset="0" max-vertical-offset="2040">
+          <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/tree/builder/DirectoryTreeBuilder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6195652" vertical-offset="75" max-vertical-offset="1110">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerHandle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08152174" vertical-offset="0" max-vertical-offset="920">
+          <caret line="7" column="73" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/Message.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08152174" vertical-offset="0" max-vertical-offset="920">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/message/ParticipantHandle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.097826086" vertical-offset="0" max-vertical-offset="920">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientHandle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06521739" vertical-offset="0" max-vertical-offset="920">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/cli/Fsync.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6847826" vertical-offset="225" max-vertical-offset="1170">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Participant.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16304348" vertical-offset="0" max-vertical-offset="920">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ClientCommunicator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4402174" vertical-offset="0" max-vertical-offset="920">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/communication/communicators/socket/ServerCommunicator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2771739" vertical-offset="360" max-vertical-offset="1290">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Client.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8532609" vertical-offset="280" max-vertical-offset="1200">
+          <caret line="73" column="45" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/utils/PathLock.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20463847" vertical-offset="0" max-vertical-offset="1005">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/HOME/home/phisikus/Git/fsync/src/main/scala/pl/poznan/put/student/scala/fsync/actors/Server.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7776262" vertical-offset="315" max-vertical-offset="1050">
+          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
           <folding />
         </state>
       </provider>

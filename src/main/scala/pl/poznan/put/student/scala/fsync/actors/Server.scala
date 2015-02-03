@@ -4,11 +4,14 @@ import pl.poznan.put.student.scala.fsync.communication.message.{Message, Message
 import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 import pl.poznan.put.student.scala.fsync.utils.Container
 
+import scala.concurrent.Lock
+
 class Server extends Participant {
 
   val treeRepository = Container.getTreeRepository
   val differenceGenerator = Container.getDifferenceGenerator
   val pathLock = Container.getPathLock
+  var listOfCurrentLocks : List[Lock] = List()
 
   override def onMessageReceived(msg: Message): Message = {
     msg.messageType match {
@@ -28,15 +31,15 @@ class Server extends Participant {
     println(Console.BLUE + "Applying..." + Console.RESET)
     msg.difference.applyInteractive(false)
     treeRepository.rebuildDirectoryTree(msg.difference.path)
-    pathLock.release(msg.difference.path)
+    listOfCurrentLocks = pathLock.release(msg.difference.path, listOfCurrentLocks)
     println(Console.GREEN + "Applied." + Console.RESET)
     new Message(MessageType.PushResponse, null, null)
   }
 
   def onPull(msg: Message): Message = {
-    pathLock.acquire(msg.tree.path)
+    listOfCurrentLocks = pathLock.acquire(msg.tree.path, listOfCurrentLocks)
     val difference = generateTreeDifferenceFromMessage(msg)
-    pathLock.release(msg.tree.path)
+    listOfCurrentLocks = pathLock.release(msg.tree.path, listOfCurrentLocks)
     println(Console.BLUE + "Difference information about \"" + msg.tree.path + "\" created. There are " + difference.nodeDifferences.length.toString + " differences." + Console.RESET)
     new Message(MessageType.PullResponse, null, difference)
   }
@@ -47,7 +50,7 @@ class Server extends Participant {
   }
 
   def onPullPush(msg: Message): Message = {
-    pathLock.acquire(msg.tree.path)
+    listOfCurrentLocks = pathLock.acquire(msg.tree.path, listOfCurrentLocks)
     val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
     println(Console.BLUE + "Tree structure of \"" + msg.tree.path + "\" for purpose of client's push created." + Console.RESET)
     new Message(MessageType.PullPushResponse, currentTree, null)
@@ -55,5 +58,11 @@ class Server extends Participant {
 
   override def onInitialize(args: Map[String, String]): Message = {
     null
+  }
+
+  override def onCrush(e: Exception): Unit = {
+    pathLock.releaseListOfLocks(listOfCurrentLocks)
+    println(Console.RED + "Client died." + Console.RESET)
+
   }
 }
