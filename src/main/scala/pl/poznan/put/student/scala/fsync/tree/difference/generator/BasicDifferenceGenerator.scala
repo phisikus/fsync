@@ -117,14 +117,11 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
     val exclusiveRightNodes = rightDiff.diff(intersectingNodesFlat)
 
     val commonNodesDifferenceThread = new BasicThread[List[NodeDifference]](() => handleCommonNodes(intersectingNodesTuples))
-    val removeNodesDifferencesThread = new BasicThread[List[NodeDifference]](() => removeNodesDifferences(exclusiveLeftNodes))
-    val createNodesDifferencesThread = new BasicThread[List[NodeDifference]](() => createNodesDifferences(exclusiveRightNodes))
-
+    val removeNodesDifferencesList = removeNodesDifferences(exclusiveLeftNodes)
+    val createNodesDifferencesList = createNodesDifferences(exclusiveRightNodes)
     commonNodesDifferenceThread.join()
-    removeNodesDifferencesThread.join()
-    createNodesDifferencesThread.join()
 
-    commonNodesDifferenceThread.result ::: removeNodesDifferencesThread.result ::: createNodesDifferencesThread.result
+    commonNodesDifferenceThread.result ::: removeNodesDifferencesList ::: createNodesDifferencesList
 
   }
 
