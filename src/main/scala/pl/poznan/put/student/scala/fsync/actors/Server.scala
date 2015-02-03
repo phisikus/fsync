@@ -60,7 +60,7 @@ class Server extends Participant {
     null
   }
 
-  override def onCrush(e: Exception): Unit = {
+  override def onCrash(e: Exception): Unit = {
     pathLock.releaseListOfLocks(listOfCurrentLocks)
     println(Console.RED + "Client died." + Console.RESET)
 
