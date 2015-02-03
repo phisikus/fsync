@@ -15,7 +15,7 @@ trait NodeDifference extends Serializable {
 
   def applyInteractive(ask: Boolean): Boolean = {
     if (ask) {
-      println(Console.YELLOW + "Apply operation " + operationName + " on '" + path + "' [(Y)es/(N)o/(A)ll] ?" + Console.RESET)
+      println(Console.YELLOW + "Apply operation " + operationName + " on '" + path + "' [(Y)es/(N)o/(A)ll/N(O)ne] ?" + Console.RESET)
       val s: Scanner = new Scanner(System.in)
       s.nextLine.toLowerCase match {
         case "y" =>
@@ -25,6 +25,8 @@ trait NodeDifference extends Serializable {
           true
         case "a" =>
           apply()
+          false
+        case "o" =>
           false
         case _ =>
           applyInteractive(ask)
