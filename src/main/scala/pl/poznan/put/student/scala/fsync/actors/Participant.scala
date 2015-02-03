@@ -8,6 +8,6 @@ trait Participant {
 
   def onInitialize(args: Map[String, String]): Message
 
-  def onCrush(e : Exception)
+  def onCrash(e : Exception)
 
 }

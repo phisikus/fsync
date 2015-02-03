@@ -30,7 +30,7 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
     }
     catch {
       case e: Exception =>
-        participant.onCrush(e)
+        participant.onCrash(e)
     }
   }
 
