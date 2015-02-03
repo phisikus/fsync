@@ -31,6 +31,8 @@ class Client extends Participant {
     println(Console.YELLOW + "Calculating push structures..." + Console.RESET)
     val localTree = getLocalDirectoryTree(msg.tree.path)
     val differenceTree = differenceGenerator.generate(msg.tree, localTree)
+    println(Console.YELLOW + "Applying changes pulled from server before push..." + Console.RESET)
+    differenceTree.applyInteractive(true)
     println(Console.GREEN + "Pushing changes..." + Console.RESET)
     new Message(MessageType.Push, null, differenceTree)
   }
