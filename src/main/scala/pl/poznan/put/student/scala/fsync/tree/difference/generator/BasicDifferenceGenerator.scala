@@ -7,6 +7,8 @@ import pl.poznan.put.student.scala.fsync.tree.difference.{DifferenceGenerator, N
 import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
 import pl.poznan.put.student.scala.fsync.utils.BasicThread
 
+import scala.annotation.tailrec
+
 class BasicDifferenceGenerator extends DifferenceGenerator {
 
   override def generate(sourceTree: DirectoryTree, resultTree: DirectoryTree): TreeDifference = {
@@ -98,14 +100,18 @@ class BasicDifferenceGenerator extends DifferenceGenerator {
 
   private def createNodesDifferences(list: List[TreeNode]): List[NodeDifference] = {
     // nodes exclusive on the right side should be added, because they don't exist in old version
-    list match {
-      case head :: tail =>
-        if (head.isDirectory)
-          List(new CreateDirectory(head.getFullPath)) ::: createNodesDifferences(head.children ::: tail)
-        else
-          List(new CreateFile(head.getFullPath, getContentForNode(head))) ::: createNodesDifferences(tail)
-      case Nil => List()
+    @tailrec
+    def createNodeDifferencesTailRec(list: List[TreeNode], acc: List[NodeDifference]): List[NodeDifference] = {
+      list match {
+        case head :: tail =>
+          if (head.isDirectory)
+            createNodeDifferencesTailRec(head.children ::: tail, acc ::: List(new CreateDirectory(head.getFullPath)))
+          else
+            createNodeDifferencesTailRec(tail, acc ::: List(new CreateFile(head.getFullPath, getContentForNode(head))))
+        case Nil => acc
+      }
     }
+    createNodeDifferencesTailRec(list, List())
   }
 
   private def diffNodeList(a: List[TreeNode], b: List[TreeNode]): List[NodeDifference] = {
