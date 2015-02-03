@@ -45,6 +45,7 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
           println(Console.RED + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
         } catch {
           case e: Exception =>
+            participant.onCrush(e)
             println(Console.RED_B + "Connection closed with " + connectionSocket.getRemoteSocketAddress.toString + Console.RESET)
         }
       }

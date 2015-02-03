@@ -70,4 +70,7 @@ class Client extends Participant {
     new Message(MessageType.Pull, directoryTree, null)
   }
 
+  override def onCrush(e: Exception): Unit = {
+    println(Console.RED + "Server connection died." + Console.RESET)
+  }
 }
