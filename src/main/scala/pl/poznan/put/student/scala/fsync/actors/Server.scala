@@ -4,13 +4,11 @@ import pl.poznan.put.student.scala.fsync.communication.message.{Message, Message
 import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 import pl.poznan.put.student.scala.fsync.utils.Container
 
-import scala.concurrent.Lock
-
 class Server extends Participant {
 
   val treeRepository = Container.getTreeRepository
   val differenceGenerator = Container.getDifferenceGenerator
-  val repositoryLock = new Lock()
+  val pathLock = Container.getPathLock
 
   override def onMessageReceived(msg: Message): Message = {
     msg.messageType match {
@@ -30,15 +28,15 @@ class Server extends Participant {
     println(Console.BLUE + "Applying..." + Console.RESET)
     msg.difference.applyInteractive(false)
     treeRepository.rebuildDirectoryTree(msg.difference.path)
-    repositoryLock.release()
+    pathLock.release(msg.difference.path)
     println(Console.GREEN + "Applied." + Console.RESET)
     new Message(MessageType.PushResponse, null, null)
   }
 
   def onPull(msg: Message): Message = {
-    repositoryLock.acquire()
+    pathLock.acquire(msg.tree.path)
     val difference = generateTreeDifferenceFromMessage(msg)
-    repositoryLock.release()
+    pathLock.release(msg.tree.path)
     println(Console.BLUE + "Difference information about \"" + msg.tree.path + "\" created. There are " + difference.nodeDifferences.length.toString + " differences." + Console.RESET)
     new Message(MessageType.PullResponse, null, difference)
   }
@@ -49,7 +47,7 @@ class Server extends Participant {
   }
 
   def onPullPush(msg: Message): Message = {
-    repositoryLock.acquire()
+    pathLock.acquire(msg.tree.path)
     val currentTree = treeRepository.getDirectoryTree(msg.tree.path)
     println(Console.BLUE + "Tree structure of \"" + msg.tree.path + "\" for purpose of client's push created." + Console.RESET)
     new Message(MessageType.PullPushResponse, currentTree, null)
