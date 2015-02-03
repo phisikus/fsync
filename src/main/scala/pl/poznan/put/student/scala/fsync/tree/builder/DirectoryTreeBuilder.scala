@@ -7,6 +7,8 @@ import pl.poznan.put.student.scala.fsync.tree.nodes.{DirectoryNode, FileNode}
 import pl.poznan.put.student.scala.fsync.tree.{DirectoryTree, TreeNode}
 import pl.poznan.put.student.scala.fsync.utils.{BasicThread, Container}
 
+import scala.annotation.tailrec
+
 
 class DirectoryTreeBuilder extends TreeBuilder {
 
@@ -43,16 +45,16 @@ class DirectoryTreeBuilder extends TreeBuilder {
   private def buildChildNodes(list: List[File]): List[TreeNode] = {
     list match {
       case head :: tail =>
-        val generateNodeThread = new BasicThread[TreeNode](() => generateNode(head.getPath, null))
         val buildChildNodesThread = new BasicThread[List[TreeNode]](() => buildChildNodes(tail))
-        generateNodeThread.join()
+        val generatedNode = generateNode(head.getPath, null)
         buildChildNodesThread.join()
-        List(generateNodeThread.result) ::: buildChildNodesThread.result
+        List(generatedNode) ::: buildChildNodesThread.result
 
       case Nil => List()
     }
   }
 
+  @tailrec
   private def changeParent(list: List[TreeNode], parent: TreeNode): Unit = {
     list match {
       case head :: tail =>
