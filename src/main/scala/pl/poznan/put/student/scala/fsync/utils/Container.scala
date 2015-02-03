@@ -10,6 +10,7 @@ object Container {
   val currentTreeBuilder = new DirectoryTreeBuilder()
   val currentDifferenceGenerator = new BasicDifferenceGenerator()
   val currentRepositoryTree = new BasicTreeRepository()
+  val currentPathLock = new PathLock()
 
   def getHashGenerator: HashGenerator = currentHashGenerator
 
@@ -18,4 +19,6 @@ object Container {
   def getDifferenceGenerator: DifferenceGenerator = currentDifferenceGenerator
 
   def getTreeRepository: TreeRepository = currentRepositoryTree
+
+  def getPathLock : PathLock = currentPathLock
 }
