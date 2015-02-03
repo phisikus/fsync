@@ -12,7 +12,7 @@ import scala.annotation.tailrec
 class BasicDifferenceGenerator extends DifferenceGenerator {
 
   override def generate(sourceTree: DirectoryTree, resultTree: DirectoryTree): TreeDifference = {
-    if (sourceTree.path != resultTree.path) {
+    if (!sourceTree.path.equals(resultTree.path)) {
       throw new IllegalArgumentException("Trees relate to different directories")
     }
 
