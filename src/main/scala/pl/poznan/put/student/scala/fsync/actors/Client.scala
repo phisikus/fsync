@@ -30,13 +30,9 @@ class Client extends Participant {
   def onPullPushResponse(msg: Message): Message = {
     println(Console.YELLOW + "Calculating push structures..." + Console.RESET)
     val localTree = getLocalDirectoryTree(msg.tree.path)
-    val differenceTreeForMe = differenceGenerator.generate(localTree, msg.tree)
-    println(Console.YELLOW + "Applying changes pulled from server before performing push..." + Console.RESET)
-    differenceTreeForMe.applyInteractive(true)
-    val localTreeAfterMerge = getLocalDirectoryTree(msg.tree.path)
-    val differenceTreeForServer = differenceGenerator.generate(msg.tree, localTreeAfterMerge)
+    val differenceTree = differenceGenerator.generate(msg.tree, localTree)
     println(Console.GREEN + "Pushing changes..." + Console.RESET)
-    new Message(MessageType.Push, null, differenceTreeForServer)
+    new Message(MessageType.Push, null, differenceTree)
   }
 
   private def getLocalDirectoryTree(directoryName: String): DirectoryTree = {
