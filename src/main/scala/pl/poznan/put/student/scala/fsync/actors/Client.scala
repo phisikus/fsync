@@ -1,7 +1,8 @@
 package pl.poznan.put.student.scala.fsync.actors
 
-import pl.poznan.put.student.scala.fsync.communication.message.{Message, MessageType}
+import pl.poznan.put.student.scala.fsync.communication.message._
 import pl.poznan.put.student.scala.fsync.tree.DirectoryTree
+import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 import pl.poznan.put.student.scala.fsync.utils.Container
 
 class Client extends Participant {
@@ -9,41 +10,41 @@ class Client extends Participant {
   val differenceGenerator = Container.getDifferenceGenerator
 
   override def onMessageReceived(msg: Message): Message = {
-    msg.messageType match {
-      case MessageType.PullResponse =>
-        onPullResponse(msg)
-      case MessageType.PullPushResponse =>
-        onPullPushResponse(msg)
-      case MessageType.PushResponse =>
-        onPushResponse(msg)
+    msg match {
+      case PullResponseMessage(diff) =>
+        onPullResponse(diff)
+      case PullPushResponseMessage(tree) =>
+        onPullPushResponse(tree)
+      case PushResponseMessage() =>
+        onPushResponse()
       case _ =>
         println(Console.RED + "Invalid message." + Console.RESET)
         null
     }
   }
 
-  def onPushResponse(message: Message): Message = {
+  def onPushResponse(): Message = {
     println(Console.GREEN + "Pushed successfully." + Console.RESET)
-    new Message(MessageType.Goodbye, null, null)
+    GoodbyeMessage()
   }
 
-  def onPullPushResponse(msg: Message): Message = {
+  def onPullPushResponse(directoryTree: DirectoryTree): Message = {
     println(Console.YELLOW + "Calculating push structures..." + Console.RESET)
-    val localTree = getLocalDirectoryTree(msg.tree.path)
-    val differenceTree = differenceGenerator.generate(msg.tree, localTree)
+    val localTree = getLocalDirectoryTree(directoryTree.path)
+    val differenceTree = differenceGenerator.generate(directoryTree, localTree)
     println(Console.GREEN + "Pushing changes..." + Console.RESET)
-    new Message(MessageType.Push, null, differenceTree)
+    PushMessage(differenceTree)
   }
 
   private def getLocalDirectoryTree(directoryName: String): DirectoryTree = {
     Container.getTreeBuilder.generateTree(directoryName)
   }
 
-  def onPullResponse(msg: Message): Message = {
+  def onPullResponse(difference: TreeDifference): Message = {
     println(Console.YELLOW + "Applying changes..." + Console.RESET)
-    msg.difference.applyInteractive(true)
+    difference.applyInteractive(true)
     println(Console.GREEN + "Changes pulled." + Console.RESET)
-    new Message(MessageType.Goodbye, null, null)
+    GoodbyeMessage()
   }
 
   override def onInitialize(args: Map[String, String]): Message = {
@@ -61,13 +62,13 @@ class Client extends Participant {
   def onPush(args: Map[String, String]): Message = {
     val directoryTree = getLocalDirectoryTree(args("directoryName"))
     println(Console.YELLOW + "Pulling metadata for directory before push: " + directoryTree.path + Console.RESET)
-    new Message(MessageType.PullPush, directoryTree, null)
+    PullPushMessage(directoryTree)
   }
 
   def onPull(args: Map[String, String]): Message = {
     val directoryTree = getLocalDirectoryTree(args("directoryName"))
     println(Console.YELLOW + "Pulling metadata for directory: " + directoryTree.path + Console.RESET)
-    new Message(MessageType.Pull, directoryTree, null)
+    PullMessage(directoryTree)
   }
 
   override def onCrash(e: Exception): Unit = {

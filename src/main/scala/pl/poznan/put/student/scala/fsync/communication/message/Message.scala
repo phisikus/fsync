@@ -1,15 +1,24 @@
 package pl.poznan.put.student.scala.fsync.communication.message
 
-import pl.poznan.put.student.scala.fsync.communication.message.MessageType.MessageType
 import pl.poznan.put.student.scala.fsync.tree.DirectoryTree
 import pl.poznan.put.student.scala.fsync.tree.difference.TreeDifference
 
 
-class Message(msgType: MessageType, directoryTree: DirectoryTree, treeDifference: TreeDifference) extends Serializable {
+abstract class Message extends Serializable {
   var sender: ParticipantHandle = _
   var recipient: ParticipantHandle = _
-  val messageType: MessageType = msgType
-  val tree: DirectoryTree = directoryTree
-  val difference: TreeDifference = treeDifference
-
 }
+
+case class GoodbyeMessage() extends Message
+
+case class PushResponseMessage() extends Message
+
+case class PullMessage(directoryTree: DirectoryTree) extends Message
+
+case class PullPushMessage(directoryTree: DirectoryTree) extends Message
+
+case class PullPushResponseMessage(directoryTree: DirectoryTree) extends Message
+
+case class PushMessage(difference: TreeDifference) extends Message
+
+case class PullResponseMessage(difference: TreeDifference) extends Message
