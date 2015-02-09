@@ -39,11 +39,11 @@ class ClientCommunicator(actor: Participant, args: Map[String, String]) extends 
       sendMessageToServer(outputToServer, messageToServer)
       messageToServer match {
         case GoodbyeMessage() =>
+        case _ =>
           println(Console.BLUE + "Sent message " + messageToServer.getClass.getSimpleName + " to server.")
           val messageFromServer = getMessageFromServer(inputFromServer)
           println(Console.BLUE + "Received " + messageFromServer.getClass.getSimpleName + " message from server.")
           clientLoop(inputFromServer, outputToServer, participant.onMessageReceived(messageFromServer))
-        case _ =>
 
       }
     }

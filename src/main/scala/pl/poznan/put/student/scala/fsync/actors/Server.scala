@@ -22,7 +22,6 @@ class Server extends Participant {
         onPullPush(tree)
       case PushMessage(diff) =>
         onPush(diff)
-
       case _ => null
     }
   }
@@ -63,6 +62,6 @@ class Server extends Participant {
 
   override def onCrash(e: Exception): Unit = {
     pathLock.releaseListOfLocks(listOfCurrentLocks)
-    println(Console.RED + "Client died." + Console.RESET)
+    println(Console.RED + "Client died: " + e.toString + Console.RESET)
   }
 }
