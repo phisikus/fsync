@@ -63,7 +63,7 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
 
   def receiveMessageAndGetResponseFromActor(inputStream: ObjectInputStream): Message = {
     val messageFromClient = getMessageFromClient(inputStream)
-    println(Console.BLUE + "Received " + messageFromClient.messageType.toString + " message from client." + Console.RESET)
+    println(Console.BLUE + "Received " + messageFromClient.getClass.getSimpleName + " message from client." + Console.RESET)
     val messageToClient = participant.onMessageReceived(messageFromClient)
     if (messageToClient != null) {
       messageToClient.sender = localHandle
@@ -75,7 +75,7 @@ class ServerCommunicator(actor: Participant, args: Map[String, String]) extends 
   def sendMessageToClient(outputToClient: ObjectOutputStream, messageToClient: Message) {
     outputToClient.writeObject(messageToClient)
     outputToClient.flush()
-    println(Console.BLUE + "Sent " + messageToClient.messageType.toString + " message to client." + Console.RESET)
+    println(Console.BLUE + "Sent " + messageToClient.getClass.getSimpleName + " message to client." + Console.RESET)
   }
 
   def getMessageFromClient(inputFromClient: ObjectInputStream): Message = {
